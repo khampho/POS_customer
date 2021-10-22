@@ -17,88 +17,75 @@ class _ProfileState extends State<Profile> {
           backgroundColor: Colors.green,
         ),
         body: Container(
-          padding: EdgeInsets.only(top: 20),
+          padding: EdgeInsets.all(20),
           child: SingleChildScrollView(
             child: Card(
               child: Column(
                 children: [
-                  const SizedBox(height: 20,),
-                  Center(
-                    child: Image.asset('assets/images/User_icon.png',width: 100,),
-                  ),
                   Container(
-                      padding: EdgeInsets.only(top: 40,left: 20,right: 20,),
-                      child:TextField(
-
-                        decoration: InputDecoration(
-                            enabled: false,
-                            border: OutlineInputBorder(
-                              borderSide: const BorderSide(color: Colors.green, width: 2.5),
-                              borderRadius: BorderRadius.circular(2.0),
-                            ),
-                            label: Text('ລະຫັດ : ')
-                        ),
-                      )
+                    padding: EdgeInsets.only(bottom: 20),
+                    child:  Center(
+                      child: Image.asset('assets/images/User_icon.png',width: 100,),
+                    ),
                   ),
+                  SizedBox(height: 10,),
                   Container(
-                      padding: EdgeInsets.only(top: 15,left: 20,right: 20,),
-                      child:TextField(
-
-                        decoration: InputDecoration(
-                            enabled: false,
-                            border: OutlineInputBorder(
-                              borderSide: const BorderSide(color: Colors.green, width: 2.5),
-                              borderRadius: BorderRadius.circular(2.0),
-                            ),
-                            label: Text('ຕຳແໜ່ງ : ')
-                        ),
-                      )
+                    height: 60,
+                    decoration: BoxDecoration(
+                      border: Border.all(color: Colors.green,width: 2),
+                    ),
+                    child: Center(
+                      child: Text('ລະຫັດ : 000122',style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold)),
+                    ),
                   ),
+                  SizedBox(height: 10,),
                   Container(
-                      padding: EdgeInsets.only(top: 15,left: 20,right: 20,),
-                      child:TextField(
+                    height: 60,
 
-                        decoration: InputDecoration(
-                            enabled: false,
-                            border: OutlineInputBorder(
-                              borderSide: const BorderSide(color: Colors.green, width: 2.5),
-                              borderRadius: BorderRadius.circular(2.0),
-                            ),
-                            label: Text('ຊື່ : ')
-                        ),
-                      )
+                    decoration: BoxDecoration(
+                        border: Border.all(color: Colors.green,width: 2),
+                    ),
+                    child: Center(
+                      child: Text('ຕຳແໜ່ງ : ພະນັກງານເກັບເງິນ',style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold)),
+                    ),
                   ),
+                  SizedBox(height: 10,),
                   Container(
-                      padding: EdgeInsets.only(top: 15,left: 20,right: 20,),
-                      child:TextField(
-
-                        decoration: InputDecoration(
-                            enabled: false,
-                            border: OutlineInputBorder(
-                              borderSide: const BorderSide(color: Colors.green, width: 2.5),
-                              borderRadius: BorderRadius.circular(2.0),
-                            ),
-                            label: Text('ເບີໂທ : ')
-                        ),
-                      )
+                    height: 60,
+                    decoration: BoxDecoration(
+                      border: Border.all(color: Colors.green,width: 2),
+                    ),
+                    child: Center(
+                      child: Text('ຊື່ : ທ້າວ ຈັນທອງ ນາມສົມໝຸດ',style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold)),
+                    ),
                   ),
+                  SizedBox(height: 10,),
                   Container(
-                      padding: EdgeInsets.only(top: 15,left: 20,right: 20,bottom: 30),
-                      child:TextField(
+                    height: 60,
 
-                        decoration: InputDecoration(
-                            enabled: false,
-                            border: OutlineInputBorder(
-                              borderSide: const BorderSide(color: Colors.green, width: 2.5),
-                              borderRadius: BorderRadius.circular(2.0),
-                            ),
-                            label: Text('ທີ່ຢູ່ : ')
-                        ),
-                      )
+                    decoration: BoxDecoration(
+                      border: Border.all(color: Colors.green,width: 2),
+                    ),
+                    child: Center(
+                      child: Text('ເບີໂທ : 020 979797',style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold)),
+                    ),
                   ),
-                  Align(
-                    child: Text('Infrasol co., ltd'),
-                  )
+                  SizedBox(height: 10,),
+                  Container(
+                    height: 60,
+                    decoration: BoxDecoration(
+                      border: Border.all(color: Colors.green,width: 2),
+                    ),
+                    child: Center(
+                      child: Text('ທີ່ຢູ່ : ບ້ານ ທົ່ງປ່ງ ,ມ.ໄຊຖານີ, ນະຄອນຫຼວງ',style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold)),
+                    ),
+                  ),
+                 Container(
+                   padding: EdgeInsets.only(top: 130,bottom: 20),
+                   child:  Align(
+                     child: Text('Infrasol co., ltd',style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold)),
+                   ),
+                 )
                 ],
               ),
             ),

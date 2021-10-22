@@ -28,17 +28,20 @@ class _BillState extends State<Bill> {
                   padding: EdgeInsets.only(bottom: 10),
                   child: Row(
                     children: [
-                      Container(
-                        width: 200,
-                        padding: EdgeInsets.only(top: 20,bottom: 10),
-                        child: TextField(
-                          enabled: false,
-                          decoration: InputDecoration(
-                              border: OutlineInputBorder(
-                                borderSide: const BorderSide(color: Colors.green, width: 2.5),
-                                borderRadius: BorderRadius.circular(2.0),
-                              ),
-                              label: Text('200,000 ກີບ',style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),)
+                      Padding(
+                        padding: const EdgeInsets.only(left: 10.0),
+                        child: Container(
+                          width: 200,
+                          height: 50,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            color: Colors.white,
+                            boxShadow: [
+                              BoxShadow(color: Colors.lightGreen, spreadRadius: 3),
+                            ],
+                          ),
+                          child: Center(
+                            child: Text('ເງິນລວມ : 350,000  ກີບ',style: TextStyle(fontSize: 17,fontWeight: FontWeight.bold)),
                           ),
                         ),
                       ),
@@ -111,17 +114,20 @@ class _BillState extends State<Bill> {
                             ],
                           ),
                         ),
-                        Container(
-                          width: 300,
-                          padding: const EdgeInsets.only(top: 20,bottom: 10),
-                          child: TextField(
-                            enabled: false,
-                            decoration: InputDecoration(
-                                border: OutlineInputBorder(
-                                  borderSide: const BorderSide(color: Colors.green, width: 2.5),
-                                  borderRadius: BorderRadius.circular(2.0),
-                                ),
-                                label: const Text('  ເງິນລວມ :            200,000 ກີບ',style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),)
+                        Padding(
+                          padding: const EdgeInsets.all(30.0),
+                          child: Container(
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                              color: Colors.white,
+                              boxShadow: [
+                                BoxShadow(color: Colors.lightGreen, spreadRadius: 3),
+                              ],
+                            ),
+                            height: 60,
+
+                            child: Center(
+                              child: Text('ເງິນລວມ : 350,000  ກີບ',style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold)),
                             ),
                           ),
                         ),

@@ -19,8 +19,7 @@ class _PaymentOfDayState extends State<PaymentOfDay> {
           title: Text('ໜ້າຫຼັກ'),
           backgroundColor: Colors.green,
         ),
-          body: Card(
-             child: SingleChildScrollView(
+          body: SingleChildScrollView(
                 child: Column(
                 children: [
                   const SizedBox(height: 20,),
@@ -49,9 +48,9 @@ class _PaymentOfDayState extends State<PaymentOfDay> {
                                 ),
                                 );
                               },
-                              icon: Image.asset("assets/images/qr_scan.jpg",
+                              icon: Image.asset("assets/images/scan.png",
                                 width: 70,
-
+                                color: Colors.green,
                               ),
                               label: Text(''),
                             ),
@@ -71,24 +70,35 @@ class _PaymentOfDayState extends State<PaymentOfDay> {
                                   ),
                                 );
                               },
-                              icon: Image.asset('assets/images/User_icon.png',width: 70,),
+                              icon: Image.asset('assets/images/user.png',width: 70,),
                               label: Text(''),
                             ),
                           )
                         ],
                       ),
                     ),
-                    const SizedBox(height: 40,),
+                    const SizedBox(height: 50,),
                     Container(
                       width: 300,
-                        padding: EdgeInsets.only(bottom: 15),
+                        padding: EdgeInsets.only(bottom: 25),
                         child: TextField(
                           decoration: InputDecoration(
-                              border: OutlineInputBorder(
-                                borderSide: const BorderSide(color: Colors.green, width: 2.5,),
-                                borderRadius: BorderRadius.circular(2.0),
+                              focusedBorder:OutlineInputBorder(
+                                borderSide: const BorderSide(color: Colors.green, width: 2.5),
+                                borderRadius: BorderRadius.circular(30),
                               ),
-                              label: Text('ລະຫັດ',style: TextStyle(fontWeight: FontWeight.bold),)
+                              enabledBorder: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(30),
+                                borderSide: BorderSide(
+                                  color: Colors.lightGreen,
+                                  width: 2.0,
+                                ),
+                              ),
+                              border: OutlineInputBorder(
+                                borderSide: const BorderSide(color: Colors.green, width: 2.5),
+                                borderRadius: BorderRadius.circular(30),
+                              ),
+                              label: Text('ລະຫັດ : ',style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold,color: Colors.green),)
                           ),
                       ),
                     ),
@@ -110,32 +120,39 @@ class _PaymentOfDayState extends State<PaymentOfDay> {
                             primary: Colors.white,
                             backgroundColor: Colors.green,
                             textStyle: const TextStyle(fontSize: 20),
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(30.0),
+                                    side: BorderSide(color: Colors.green),
+                                )
                             ),
+
+
                             child: Text('ອອກບິນ',style: TextStyle(fontWeight: FontWeight.bold))
                         )
                     ),
                   Container(
                     padding: EdgeInsets.only(top: 80),
-                    child: Text('ລາຍຮັບມື້ນີ້ : ',style: TextStyle(fontSize: 30),),
+                    child: Text('ລາຍຮັບມື້ນີ້ : ',style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold),),
                   ),
-                  Container(
-                    width: 300,
-                    padding: EdgeInsets.only(top: 20,bottom: 10),
-                    child: TextField(
-                      enabled: false,
-                      controller: price,
-                      decoration: InputDecoration(
-                          border: OutlineInputBorder(
-                            borderSide: const BorderSide(color: Colors.green, width: 2.5),
-                            borderRadius: BorderRadius.circular(2.0),
-                          ),
-                          label: Text('      300,000  ກີບ',style: TextStyle( fontSize: 30,fontWeight: FontWeight.bold))
+                  Padding(
+                    padding: const EdgeInsets.all(30.0),
+                    child: Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        color: Colors.white,
+                        boxShadow: [
+                          BoxShadow(color: Colors.lightGreen, spreadRadius: 3),
+                        ],
+                      ),
+                      height: 60,
+
+                      child: Center(
+                        child: Text('ເງິນລວມ : 350,000  ກີບ',style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold)),
                       ),
                     ),
-                  )
+                  ),
                 ],
               ),
-            ),
           ),
       ),
     );

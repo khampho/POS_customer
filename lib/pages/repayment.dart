@@ -16,6 +16,17 @@ class _RePaymentState extends State<RePayment> {
           centerTitle: true,
           backgroundColor: Colors.green,
         ),
+        body: Container(
+          height: 60,
+          margin: const EdgeInsets.all(15.0),
+          padding: const EdgeInsets.all(20.0),
+          decoration: BoxDecoration(
+              border: Border.all(color: Colors.green)
+          ),
+          child: Center(
+            child: Text('Content'),
+          ),
+        ),
       ),
     );
   }

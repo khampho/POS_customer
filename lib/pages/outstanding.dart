@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+
+import 'outstanding_report_day.dart';
 class OutStanding extends StatefulWidget {
   const OutStanding({Key? key}) : super(key: key);
 
@@ -9,12 +11,25 @@ class OutStanding extends StatefulWidget {
 class _OutStandingState extends State<OutStanding> {
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return DefaultTabController(
+      length: 2,
       child: Scaffold(
         appBar: AppBar(
-          title: Text('ຮາ້ນຄ້າ ທີ່ຄ້າງຊຳລະ'),
-          centerTitle: true,
           backgroundColor: Colors.green,
+          title: Text('ລາຍງານການຖອກຊຳລະ'),
+          bottom: TabBar(
+            tabs: [
+              Tab(child: Text('ລາຍວັນ',style: TextStyle(fontSize: 18),)),
+              Tab(child: Text('ລາຍເດືອນ',style: TextStyle(fontSize: 18),)),
+            ],
+          ),
+        ),
+        body:  TabBarView(
+          children: const <Widget>[
+            OutstandingReportOfDay(),
+            OutstandingReportOfDay(),
+
+          ],
         ),
       ),
     );

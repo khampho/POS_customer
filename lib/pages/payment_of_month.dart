@@ -33,34 +33,42 @@ class _PaymentOfMonthState extends State<PaymentOfMonth> {
             child: Card(
               child: Column(
                 children: [
-                  Container(
-                      padding: EdgeInsets.only(left: 180),
-                      child: TextButton.icon(
-                      style: ButtonStyle(
-                      backgroundColor:
-                      MaterialStateProperty.all(Colors.white)),
-                    onPressed: () {
-                      ////
-                    },
-                         icon: Image.asset('assets/images/printer.png',width: 50,),
-                        label: Text(''),
-                    ),
-                  ),
-                  Container(
-                    padding: EdgeInsets.only(bottom: 30,top: 20),
-                    child: TextField(
-                        decoration: InputDecoration(
-                            focusedBorder:OutlineInputBorder(
-                              borderSide: const BorderSide(color: Colors.green, width: 2.5),
-                              borderRadius: BorderRadius.circular(2.0),
-                            ),
 
-                            border: OutlineInputBorder(
-                              borderSide: const BorderSide(color: Colors.green, width: 2.5),
-                              borderRadius: BorderRadius.circular(2.0),
+                  Container(
+                    padding: EdgeInsets.only(bottom: 10),
+                    child: Row(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(left: 10.0),
+                          child: Container(
+                            width: 200,
+                            height: 50,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                              color: Colors.white,
+                              boxShadow: [
+                                BoxShadow(color: Colors.lightGreen, spreadRadius: 3),
+                              ],
                             ),
-                            labelText: 'ຈຳນວນເງິນ (ກີບ)',
-                            prefixIcon: Icon(Icons.price_check))
+                            child: Center(
+                              child: Text('ເງິນລວມ : 350,000  ກີບ',style: TextStyle(fontSize: 17,fontWeight: FontWeight.bold)),
+                            ),
+                          ),
+                        ),
+                        Container(
+                          padding: EdgeInsets.only(left: 20),
+                          child: TextButton.icon(
+                            style: ButtonStyle(
+                                backgroundColor:
+                                MaterialStateProperty.all(Colors.white)),
+                            onPressed: () {
+                              ////
+                            },
+                            icon: Image.asset('assets/images/printer.png',width: 50,),
+                            label: Text(''),
+                          ),
+                        ),
+                      ],
                     ),
                   ),
 
@@ -69,15 +77,18 @@ class _PaymentOfMonthState extends State<PaymentOfMonth> {
                     width: 300,
                     height: 60,
                     padding: EdgeInsets.all(20),
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(2),
-                          border: Border.all(width: 2,color: Colors.green)
-                      ),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: Colors.white,
+                      boxShadow: [
+                        BoxShadow(color: Colors.lightGreen, spreadRadius: 3),
+                      ],
+                    ),
                     child: DropdownButtonHideUnderline(
                         child:DropdownButton<String>(
                           value: zone,
                           //icon: const Icon(Icons.arrow_downward),
-                           iconSize: 34,
+                           iconSize: 24,
                            elevation: 16,
                           //style: const TextStyle(color: Colors.deepPurple),
                           underline: Container(
@@ -92,7 +103,7 @@ class _PaymentOfMonthState extends State<PaymentOfMonth> {
                               .map<DropdownMenuItem<String>>((String value) {
                             return DropdownMenuItem<String>(
                               value: value,
-                              child: Text(value),
+                              child: Text(value,),
                             );
                           }).toList(),
                         )
@@ -106,12 +117,20 @@ class _PaymentOfMonthState extends State<PaymentOfMonth> {
                          Text('ລາຍຊື່ແມ່ນຄ້າ',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),),
 
                          Container(
+                           padding: EdgeInsets.only(top: 20),
                            child: ListView.separated(
                              shrinkWrap: true,
                              itemCount: _customer.length,
                              itemBuilder: (context, int index) {
                                return Container(
-                                 color: Color(_customer[index].color),
+                                 decoration: BoxDecoration(
+                                   borderRadius: BorderRadius.circular(10),
+                                   color: Color(_customer[index].color),
+                                   boxShadow: [
+                                     BoxShadow(color: Colors.lightGreen, spreadRadius: 2),
+                                   ],
+                                 ),
+
                                  child: ListTile(
                                    title:TextButton(
                                      onPressed: (){
@@ -123,7 +142,7 @@ class _PaymentOfMonthState extends State<PaymentOfMonth> {
                                        );
                                      },
                                      child: Text(
-                                       _customer[index].name
+                                       _customer[index].name,style: TextStyle(fontSize: 18,color: Colors.white)
                                      ),
 
                                    ),

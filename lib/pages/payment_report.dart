@@ -40,7 +40,7 @@ class _PaymentReportState extends State<PaymentReport> {
                                   ),
                                 );
                               },
-                              icon: Image.asset('assets/images/price_icon.jpg',width: 70,),
+                              icon: Image.asset('assets/images/price_icon.png',width: 70,),
                               label: Text('ລາຍຮັບປະຈຳວັນ                         ',style: TextStyle(fontSize: 20,color: Colors.green),),
                             ),
                           ),
@@ -60,7 +60,7 @@ class _PaymentReportState extends State<PaymentReport> {
                               ),
                               );
                             },
-                            icon: Image.asset('assets/images/price_icon.jpg',width: 70,),
+                            icon: Image.asset('assets/images/price_icon.png',width: 70,),
                             label: Text('ລາຍຮັບປະຈຳເດືອນ                     ',style: TextStyle(fontSize: 20, color: Colors.green),),
                           ),
                         ),
@@ -79,7 +79,7 @@ class _PaymentReportState extends State<PaymentReport> {
                               ),
                               );
                             },
-                            icon: Image.asset('assets/images/price_icon.jpg',width: 70,),
+                            icon: Image.asset('assets/images/price_icon.png',width: 70,),
                             label: const Text('ຖອກຊຳລະ                                  ',style: TextStyle(fontSize: 20, color: Colors.green),),
                           ),
                         ),
@@ -98,8 +98,8 @@ class _PaymentReportState extends State<PaymentReport> {
                               ),
                               );
                             },
-                            icon: Image.asset('assets/images/price_icon.jpg',width: 70,),
-                            label: const Text('ຮ້ານຄ້າທີ່ຄ້າງຊຳລະ                                            ',style: TextStyle(fontSize: 20, color: Colors.green),),
+                            icon: Image.asset('assets/images/price_icon.png',width: 70,),
+                            label: const Text('ຮ້ານຄ້າທີ່ຄ້າງຊຳລະ                       ',style: TextStyle(fontSize: 20, color: Colors.green),),
                           ),
                         ),
                   ],

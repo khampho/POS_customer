@@ -31,13 +31,13 @@ class MyCustomFormState extends State<MyCustomForm> {
   Widget build(BuildContext context) {
     // Build a Form widget using the _formKey created above.
     return Container(
+      padding: EdgeInsets.only(left: 35),
       child: Form(
         key: _formKey,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Expanded(
-              child: Center(
                 child: SingleChildScrollView(
                   child:Column(
                     children: [
@@ -45,12 +45,11 @@ class MyCustomFormState extends State<MyCustomForm> {
                         child:Image.asset("assets/images/manBuying.jpg",
                           width: 250,
                           height: 200,
-
                         ),
                       ),
-                      const SizedBox(height: 10),
                         Container(
                           width: 300,
+                          padding: EdgeInsets.only(top: 30),
                           child:  TextFormField(
                               validator: (value) {
                                 if (value == null || value.isEmpty) {
@@ -64,17 +63,31 @@ class MyCustomFormState extends State<MyCustomForm> {
                               keyboardType: TextInputType.emailAddress,
                               obscureText: false,
                               decoration: InputDecoration(
-                                  focusedBorder:OutlineInputBorder(
-                                    borderSide: const BorderSide(color: Colors.green, width: 2.5),
-                                    borderRadius: BorderRadius.circular(2.0),
+                                  focusedBorder: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(30),
+                                    borderSide: BorderSide(
+                                      color: Colors.green,
+                                      width: 2,
+                                    ),
                                   ),
-
+                                enabledBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(30),
+                                  borderSide: BorderSide(
+                                    color: Colors.lightGreen,
+                                    width: 2.0,
+                                  ),
+                                 ),
                                   border: OutlineInputBorder(
                                     borderSide: const BorderSide(color: Colors.green, width: 2.5),
-                                    borderRadius: BorderRadius.circular(2.0),
+                                    borderRadius: BorderRadius.circular(30),
                                   ),
+
                                   labelText: 'ອີເມລ',labelStyle: TextStyle(color: Colors.green),
-                                  prefixIcon: Icon(Icons.person))
+                                  prefixIcon: Icon(
+                                    Icons.email,
+                                    color: Colors.green,
+                                    size: 30.0,
+                                  ),)
                           ),
                         ),
                       const SizedBox(height: 10),
@@ -83,9 +96,9 @@ class MyCustomFormState extends State<MyCustomForm> {
                           child: TextFormField(
                               validator: (value) {
                                 if (value == null || value.isEmpty) {
-                                  return 'ກະລຸນາປ້ອນລະຫັດຜ່ານ';
+                                  return 'ກະລຸນາປ້ອນລະຫັດຜ່ານ!';
                                 }else if(value != pass){
-                                  return 'ລະຫັດຜ່ານບໍ່ຖືກຕ້ອງ';
+                                  return 'ລະຫັດຜ່ານບໍ່ຖືກຕ້ອງ!';
                                 }
                                 return null;
                               },
@@ -93,60 +106,77 @@ class MyCustomFormState extends State<MyCustomForm> {
                               keyboardType: TextInputType.emailAddress,
                               obscureText: true,
                               decoration: InputDecoration(
-                                  focusedBorder:OutlineInputBorder(
-                                    borderSide: const BorderSide(color: Colors.green, width: 2.5),
-                                    borderRadius: BorderRadius.circular(2.0),
+                                  focusedBorder: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(30),
+                                    borderSide: BorderSide(
+                                      color: Colors.green,
+                                      width: 2
+                                    ),
                                   ),
-
+                                  enabledBorder: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(30),
+                                    borderSide: BorderSide(
+                                      color: Colors.lightGreen,
+                                      width: 2.0,
+                                    ),
+                                  ),
                                   border: OutlineInputBorder(
                                     borderSide: const BorderSide(color: Colors.green, width: 2.5),
-                                    borderRadius: BorderRadius.circular(2.0),
+                                    borderRadius: BorderRadius.circular(30),
                                   ),
                                   labelText: 'ລະຫັດຜ່ານ',labelStyle: TextStyle(color: Colors.green),
-                                  prefixIcon: Icon(Icons.security_rounded))
+                                  prefixIcon: Icon(
+                                    Icons.password_outlined,
+                                    color: Colors.green,
+                                    size: 30.0,
+                                  ),)
                         ),
                       ),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 16.0),
-                        child: ElevatedButton(
-                          style: TextButton.styleFrom(
-                            padding: const EdgeInsets.all(16.0),
-                            primary: Colors.white,
-                            backgroundColor: Colors.green,
-                            textStyle: const TextStyle(fontSize: 20,),
-                          ),
-                          onPressed: () {
-
-                             if (_formKey.currentState!.validate()) {
-                              ScaffoldMessenger.of(context).showSnackBar(
-                                const SnackBar(content: Text('')),
-
-                              );
-                              if( mail == email.text && pass == password.text){
-                                Navigator.push(context,MaterialPageRoute(
-                                    builder: (context){
-                                      return HomeScreen();
-                                    }
+                         Container(
+                           width: 300,
+                           padding: EdgeInsets.only(top: 30),
+                           child: ElevatedButton(
+                            style: TextButton.styleFrom(
+                              padding: const EdgeInsets.all(16.0),
+                              primary: Colors.white,
+                              backgroundColor: Colors.lightGreen,
+                              textStyle: const TextStyle(fontSize: 20,),
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(30.0),
+                                    side: BorderSide(color: Colors.lightGreen)
                                 )
+                            ),
+                            onPressed: () {
+
+                               if (_formKey.currentState!.validate()) {
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                  const SnackBar(content: Text('')),
+
                                 );
+                                if( mail == email.text && pass == password.text){
+                                  Navigator.push(context,MaterialPageRoute(
+                                      builder: (context){
+                                        return HomeScreen();
+                                      }
+                                  )
+                                  );
+                                }else{
+                                  print('error');
+                                }
+
                               }else{
-                                print('error');
+
+                                 print('email && password is null');
+
                               }
-
-                            }else{
-
-                               print('email && password is null');
-
-                            }
-                          },
-                          child: const Text('                  ເຂົ້າສູ່ລະບົບ                  '),
+                            },
+                            child: const Text('ເຂົ້າສູ່ລະບົບ'),
                         ),
-                      )
+                         ),
                     ],
                   ),
                 ),
                ),
-             ),
                 Align(
                   alignment: Alignment.bottomCenter,
                   child: Text("ຊື່ຕະຫຼາດ",style: TextStyle(fontSize: 15),),

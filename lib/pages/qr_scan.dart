@@ -16,41 +16,60 @@ class _QrScanState extends State<QrScan> {
         appBar: AppBar(
           centerTitle: true,
           title: Text(''),
+          backgroundColor: Colors.green,
         ),
         body: Center(
-            child:
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: <Widget>[
-                Padding(
-                  padding: EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
-                  child: RaisedButton(
-                      color: Colors.blue,
-                      textColor: Colors.white,
-                      splashColor: Colors.blueGrey,
-                      onPressed: () {
-
-                      },
-                      child: const Text('SCAN QR CODE')
-                  ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Text(
+                'Scan Result',
+                style: TextStyle(
+                  fontSize: 16,
+                  color: Colors.white54,
+                  fontWeight: FontWeight.bold,
                 ),
-                Padding(
-                  padding: EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
-                  child: RaisedButton(
-                      color: Colors.blue,
-                      textColor: Colors.white,
-                      splashColor: Colors.blueGrey,
-                      onPressed: () {
-
-                      },
-                      child: const Text(' QR CODE')
-                  ),
+              ),
+              SizedBox(height: 8),
+              Text(
+                'null',
+                style: TextStyle(
+                  fontSize: 28,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
                 ),
-              ],
-            )
+              ),
+              SizedBox(height: 72),
+             Image.network('https://www.qr-code-generator.com/wp-content/themes/qr/new_structure/markets/core_market_full/generator/dist/generator/assets/images/websiteQRCode_noFrame.png')
+            ],
+          ),
         ),
       ),
     );
   }
+
+  scanQRCode() {}
+}
+class ButtonWidget extends StatelessWidget {
+  final String text;
+  final VoidCallback onClicked;
+
+  const ButtonWidget({
+    required this.text,
+    required this.onClicked,
+    required Key key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) => RaisedButton(
+    child: Text(
+      text,
+      style: TextStyle(fontSize: 24),
+    ),
+    shape: StadiumBorder(),
+    color: Theme.of(context).primaryColor,
+    padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+    textColor: Colors.white,
+    onPressed: onClicked,
+  );
 }
