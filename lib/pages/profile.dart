@@ -68,7 +68,7 @@ class _ProfileState extends State<Profile> {
                     child: Text('ເບີໂທ : 020 979797',style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold)),
                   ),
                 ),
-                SizedBox(height: 10,),
+                const SizedBox(height: 10,),
                 Container(
                   height: 60,
                   decoration: BoxDecoration(
@@ -79,7 +79,7 @@ class _ProfileState extends State<Profile> {
                   ),
                 ),
                Container(
-                 padding: EdgeInsets.only(top: 130,bottom: 20),
+                 padding: const EdgeInsets.only(top: 130,bottom: 20),
                  child:  const Align(
                    child: Text('Infrasol co., ltd',style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold)),
                  ),

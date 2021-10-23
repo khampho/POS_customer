@@ -7,6 +7,14 @@ class CustomerIncome extends StatefulWidget {
 }
 
 class _CustomerIncomeState extends State<CustomerIncome> {
+  final List<Data> _data = [
+    Data(no: 1,lists: 'ຂີ້ເຫຍື້ອ',service: 30000),
+    Data(no: 2,lists: 'ຂີ້ເຫຍື້ອ',service: 30000),
+    Data(no: 3,lists: 'ຂີ້ເຫຍື້ອ',service: 30000),
+    Data(no: 4,lists: 'ຂີ້ເຫຍື້ອ',service: 30000),
+    Data(no: 5,lists: 'ຂີ້ເຫຍື້ອ',service: 30000),
+
+  ];
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -18,7 +26,7 @@ class _CustomerIncomeState extends State<CustomerIncome> {
         ),
         body: SingleChildScrollView(
           child: Container(
-            padding: EdgeInsets.all(20),
+            padding: EdgeInsets.all(10),
             child: Column(
               children: [
                 Container(
@@ -33,7 +41,7 @@ class _CustomerIncomeState extends State<CustomerIncome> {
                           borderRadius: BorderRadius.circular(10),
                           color: Colors.white,
                           boxShadow: [
-                            BoxShadow(color: Colors.lightGreen, spreadRadius: 3),
+                            BoxShadow(color: Colors.grey, spreadRadius: 3),
                           ],
                         ),
                         child: Center(
@@ -42,22 +50,23 @@ class _CustomerIncomeState extends State<CustomerIncome> {
                       ),
                     ),
                       Container(
-                        padding: EdgeInsets.only(left: 30),
-                        child: TextButton.icon(
-                          style: ButtonStyle(
-                              backgroundColor:
-                              MaterialStateProperty.all(Colors.white)),
-                          onPressed: () {
-                            ////
-                          },
-                          icon: Image.asset('assets/images/printer.png',width: 50,),
-                          label: Text(''),
+                        padding: EdgeInsets.only(left: 30,bottom: 20),
+                        child: IconButton(
+                            onPressed: (){},
+                            icon: const Icon(
+                              Icons.print,
+                              color: Colors.green,
+                              size: 60,
+                            )
                         ),
                       ),
                     ],
                   ),
                 ),
                 Card(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(15.0),
+                  ),
                   child: Container(
                     padding: EdgeInsets.all(10),
                     child: Column(
@@ -99,31 +108,33 @@ class _CustomerIncomeState extends State<CustomerIncome> {
                             ),
                           ],
                         ),
-                        Card(
-                          child: DataTable(
-                            columns: const [
-                              DataColumn(label: Text(
-                                  'ລຳດັບ',
-                                  style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold)
-                              )),
-                              DataColumn(
+                        Row(
+                          children: const [
+                            Text('ລຳດັບ'),
+                            Spacer(),
+                            Text('ລາຍການ'),
+                            Spacer(),
+                            Text('ຄ່າບໍລິການ')
+                          ],
+                        ),
+                        ListView.separated(
+                          shrinkWrap: true,
+                          itemCount: _data.length,
+                          itemBuilder: (context, int index) {
+                            return SingleChildScrollView(
 
-                                  label: Text(
-                                  'ລາຍການ',
-                                  style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold)
-                              )),
-                            ],
-                            rows: const [
-                              DataRow(cells: [
-                                DataCell(Text('1')),
-                                DataCell(Text('ສະຖານທີ່')),
-                              ]),
-                              DataRow(cells: [
-                                DataCell(Text('2')),
-                                DataCell(Text('ອະນາໄມ')),
-                              ]),
-                            ],
-                          ),
+                              child:Row(
+                                children: [
+                                  Text(_data[index].no.toString() ,style: const TextStyle(fontSize: 15),),
+                                  const Spacer(),
+                                  Text(_data[index].lists,style: const TextStyle(fontSize: 15),),
+                                  const Spacer(),
+                                  Text(_data[index].service.toString()+ " ກີບ",style: TextStyle(fontSize: 15),)
+
+                                ],
+                              ),
+                            );
+                          }, separatorBuilder: (BuildContext context, int index) => Divider(),
                         ),
                         Padding(
                           padding: const EdgeInsets.all(30.0),
@@ -132,7 +143,7 @@ class _CustomerIncomeState extends State<CustomerIncome> {
                               borderRadius: BorderRadius.circular(10),
                               color: Colors.white,
                               boxShadow: [
-                                BoxShadow(color: Colors.lightGreen, spreadRadius: 3),
+                                BoxShadow(color: Colors.grey, spreadRadius: 3),
                               ],
                             ),
                             height: 60,
@@ -165,4 +176,10 @@ class _CustomerIncomeState extends State<CustomerIncome> {
       ),
     );
   }
+}
+class Data {
+  final int no;
+  var lists;
+  final int service;
+  Data( {required this.no, this.lists,required this.service});
 }

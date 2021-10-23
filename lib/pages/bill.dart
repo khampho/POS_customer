@@ -8,8 +8,19 @@ class Bill extends StatefulWidget {
   _BillState createState() => _BillState();
 }
 
+
+
 class _BillState extends State<Bill> {
   final String _date = 'ວັນທີ: 22/10/2021';
+
+  final List<Data> _data = [
+    Data(no: 1,lists: 'ຂີ້ເຫຍື້ອ',service: 30000),
+    Data(no: 2,lists: 'ຂີ້ເຫຍື້ອ',service: 30000),
+    Data(no: 3,lists: 'ຂີ້ເຫຍື້ອ',service: 30000),
+    Data(no: 4,lists: 'ຂີ້ເຫຍື້ອ',service: 30000),
+    Data(no: 5,lists: 'ຂີ້ເຫຍື້ອ',service: 30000),
+
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,47 +31,47 @@ class _BillState extends State<Bill> {
       ),
       body: SingleChildScrollView(
         child: Container(
-          padding: const EdgeInsets.all(20),
+          padding: const EdgeInsets.all(10),
           child: Column(
             children: [
               Container(
-                padding: const EdgeInsets.only(bottom: 10),
+                padding: EdgeInsets.only(bottom: 10),
                 child: Row(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.only(left: 10.0),
-                      child: Container(
-                        width: 200,
-                        height: 50,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          color: Colors.white,
-                          boxShadow: const [
-                            BoxShadow(color: Colors.lightGreen, spreadRadius: 3),
-                          ],
-                        ),
-                        child: const Center(
-                          child: Text('ເງິນລວມ : 350,000  ກີບ',style: TextStyle(fontSize: 17,fontWeight: FontWeight.bold)),
-                        ),
+                  children: [ Padding(
+                    padding: const EdgeInsets.only(left: 10.0),
+                    child: Container(
+                      width: 200,
+                      height: 50,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        color: Colors.white,
+                        boxShadow: const [
+                          BoxShadow(color: Colors.grey, spreadRadius: 3),
+                        ],
+                      ),
+                      child: const Center(
+                        child: Text('ເງິນລວມ : 350,000  ກີບ',style: TextStyle(fontSize: 17,fontWeight: FontWeight.bold)),
                       ),
                     ),
+                  ),
                     Container(
-                      padding: const EdgeInsets.only(left: 30),
-                      child: TextButton.icon(
-                        style: ButtonStyle(
-                            backgroundColor:
-                            MaterialStateProperty.all(Colors.white)),
-                        onPressed: () {
-                          ////
-                        },
-                        icon: Image.asset('assets/images/printer.png',width: 50,),
-                        label: const Text(''),
+                      padding: const EdgeInsets.only(left: 30,bottom: 20),
+                      child: IconButton(
+                          onPressed: (){},
+                          icon: const Icon(
+                            Icons.print,
+                            color: Colors.green,
+                            size: 60,
+                          )
                       ),
                     ),
                   ],
                 ),
               ),
               Card(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(15.0),
+                ),
                 child: Container(
                   padding: const EdgeInsets.all(10),
                   child: Column(
@@ -79,12 +90,40 @@ class _BillState extends State<Bill> {
                       Row(
                         children: [
                           Text(_date),
-                          Spacer(),
+                          const Spacer(),
                           Container(
                             padding: const EdgeInsets.only(left: 30,bottom: 10),
                             child: const Text('ເລກທີ່ : 203'),
                           ),
                         ],
+                      ),
+                      Row(
+                        children: const [
+                          Text('ລຳດັບ'),
+                          Spacer(),
+                          Text('ລາຍການ'),
+                          Spacer(),
+                          Text('ຄ່າບໍລິການ')
+                        ],
+                      ),
+                      ListView.separated(
+                        shrinkWrap: true,
+                        itemCount: _data.length,
+                        itemBuilder: (context, int index) {
+                          return SingleChildScrollView(
+
+                            child:Row(
+                              children: [
+                                Text(_data[index].no.toString() ,style: const TextStyle(fontSize: 15),),
+                                const Spacer(),
+                                Text(_data[index].lists,style: const TextStyle(fontSize: 15),),
+                                const Spacer(),
+                                Text(_data[index].service.toString()+ " ກີບ",style: TextStyle(fontSize: 15),)
+
+                              ],
+                            ),
+                          );
+                        }, separatorBuilder: (BuildContext context, int index) => Divider(),
                       ),
                       Padding(
                         padding: const EdgeInsets.all(30.0),
@@ -93,7 +132,7 @@ class _BillState extends State<Bill> {
                             borderRadius: BorderRadius.circular(10),
                             color: Colors.white,
                             boxShadow: const [
-                              BoxShadow(color: Colors.lightGreen, spreadRadius: 3),
+                              BoxShadow(color: Colors.grey, spreadRadius: 3),
                             ],
                           ),
                           height: 60,
@@ -126,3 +165,11 @@ class _BillState extends State<Bill> {
     );
   }
 }
+
+class Data {
+  final int no;
+  var lists;
+  final int service;
+  Data( {required this.no, this.lists,required this.service});
+}
+

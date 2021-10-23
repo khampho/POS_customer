@@ -29,22 +29,27 @@ class _PaymentOfDayState extends State<PaymentOfDay> {
                         IconButton(
                             onPressed: (){},
                             icon: const Icon(
-                              Icons.favorite,
-                              color: Colors.green,
+                              Icons.ice_skating,
+                              color: Colors.indigo,
                               size: 60,
                             )
                         ),
                         const Spacer(),
                         IconButton(
-                            onPressed: (){},
+                            onPressed: (){
+                              Navigator.push(context, MaterialPageRoute(builder: (context){
+                                return const QrScan();
+                              }));
+                            },
                             icon: const Icon(
                                 Icons.qr_code,
-                              color: Colors.green,
+                              color: Colors.lightGreenAccent,
                               size: 60,
                             )
                         ),
                         const Spacer(),
                         IconButton(
+                          padding: const EdgeInsets.only(right: 45),
                             onPressed: (){
                               Navigator.push(
                                 context, MaterialPageRoute(
@@ -57,7 +62,7 @@ class _PaymentOfDayState extends State<PaymentOfDay> {
                             icon: const Icon(
                               Icons.person,
                               color: Colors.green,
-                              size: 60,
+                              size: 70,
                             )
                         ),
                       ],
@@ -126,7 +131,7 @@ class _PaymentOfDayState extends State<PaymentOfDay> {
                         borderRadius: BorderRadius.circular(10),
                         color: Colors.white,
                         boxShadow: const [
-                          BoxShadow(color: Colors.lightGreen, spreadRadius: 3),
+                          BoxShadow(color: Colors.grey, spreadRadius: 3),
                         ],
                       ),
                       height: 60,
