@@ -13,100 +13,98 @@ class PaymentReport extends StatefulWidget {
 class _PaymentReportState extends State<PaymentReport> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-        child: Scaffold(
-          appBar: AppBar(
-            title: Text('ລາຍງານ'),
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('ລາຍງານ'),
 
-            backgroundColor: Colors.green,
-          ),
-          body: Container(
-            padding: EdgeInsets.only(top: 20),
-            child: SingleChildScrollView(
-                child: Column(
-                  children: [
-                       Card(
+        backgroundColor: Colors.green,
+      ),
+      body: Container(
+        padding: const EdgeInsets.only(top: 20),
+        child: SingleChildScrollView(
+            child: Column(
+              children: [
+                   Card(
 
-                            child: TextButton.icon(
-                              style: ButtonStyle(
-                                  backgroundColor:
-                                  MaterialStateProperty.all(Colors.white)),
-                              onPressed: () {
-                                Navigator.push(
-                                  context, MaterialPageRoute(
-                                    builder: (context){
-                                      return DailyIncome();
-                                    }
-                                  ),
-                                );
-                              },
-                              icon: Image.asset('assets/images/price_icon.png',width: 70,),
-                              label: Text('ລາຍຮັບປະຈຳວັນ                         ',style: TextStyle(fontSize: 20,color: Colors.green),),
-                            ),
-                          ),
+                        child: TextButton.icon(
+                          style: ButtonStyle(
+                              backgroundColor:
+                              MaterialStateProperty.all(Colors.white)),
+                          onPressed: () {
+                            Navigator.push(
+                              context, MaterialPageRoute(
+                                builder: (context){
+                                  return const DailyIncome();
+                                }
+                              ),
+                            );
+                          },
+                          icon: Image.asset('assets/images/price_icon.png',width: 70,),
+                          label: const Text('ລາຍຮັບປະຈຳວັນ                         ',style: TextStyle(fontSize: 20,color: Colors.green),),
+                        ),
+                      ),
 
-                          Card(
-                          //padding: EdgeInsets.only(top: 10,left: 15),
-                          child: TextButton.icon(
-                            style: ButtonStyle(
-                                backgroundColor:
-                                MaterialStateProperty.all(Colors.white)),
-                            onPressed: () {
-                              Navigator.push(
-                                context, MaterialPageRoute(
-                                  builder: (context){
-                                    return MonthlyIncome();
-                                  }
-                              ),
-                              );
-                            },
-                            icon: Image.asset('assets/images/price_icon.png',width: 70,),
-                            label: Text('ລາຍຮັບປະຈຳເດືອນ                     ',style: TextStyle(fontSize: 20, color: Colors.green),),
+                      Card(
+                      //padding: EdgeInsets.only(top: 10,left: 15),
+                      child: TextButton.icon(
+                        style: ButtonStyle(
+                            backgroundColor:
+                            MaterialStateProperty.all(Colors.white)),
+                        onPressed: () {
+                          Navigator.push(
+                            context, MaterialPageRoute(
+                              builder: (context){
+                                return const MonthlyIncome();
+                              }
                           ),
-                        ),
-                        Card(
-                          //padding: EdgeInsets.only(top: 10,left: 15),
-                          child: TextButton.icon(
-                            style: ButtonStyle(
-                                backgroundColor:
-                                MaterialStateProperty.all(Colors.white)),
-                            onPressed: () {
-                              Navigator.push(
-                                context, MaterialPageRoute(
-                                  builder: (context){
-                                    return OutStanding();
-                                  }
-                              ),
-                              );
-                            },
-                            icon: Image.asset('assets/images/price_icon.png',width: 70,),
-                            label: const Text('ຖອກຊຳລະ                                  ',style: TextStyle(fontSize: 20, color: Colors.green),),
+                          );
+                        },
+                        icon: Image.asset('assets/images/price_icon.png',width: 70,),
+                        label: const Text('ລາຍຮັບປະຈຳເດືອນ                     ',style: TextStyle(fontSize: 20, color: Colors.green),),
+                      ),
+                    ),
+                    Card(
+                      //padding: EdgeInsets.only(top: 10,left: 15),
+                      child: TextButton.icon(
+                        style: ButtonStyle(
+                            backgroundColor:
+                            MaterialStateProperty.all(Colors.white)),
+                        onPressed: () {
+                          Navigator.push(
+                            context, MaterialPageRoute(
+                              builder: (context){
+                                return const OutStanding();
+                              }
                           ),
-                        ),
-                         Card(
-                          //padding: EdgeInsets.only(top: 10,left: 15),
-                          child: TextButton.icon(
-                            style: ButtonStyle(
-                                backgroundColor:
-                                MaterialStateProperty.all(Colors.white)),
-                            onPressed: () {
-                              Navigator.push(
-                                context, MaterialPageRoute(
-                                  builder: (context){
-                                    return RePayment();
-                                  }
-                              ),
-                              );
-                            },
-                            icon: Image.asset('assets/images/price_icon.png',width: 70,),
-                            label: const Text('ຮ້ານຄ້າທີ່ຄ້າງຊຳລະ                       ',style: TextStyle(fontSize: 20, color: Colors.green),),
+                          );
+                        },
+                        icon: Image.asset('assets/images/price_icon.png',width: 70,),
+                        label: const Text('ຖອກຊຳລະ                                  ',style: TextStyle(fontSize: 20, color: Colors.green),),
+                      ),
+                    ),
+                     Card(
+                      //padding: EdgeInsets.only(top: 10,left: 15),
+                      child: TextButton.icon(
+                        style: ButtonStyle(
+                            backgroundColor:
+                            MaterialStateProperty.all(Colors.white)),
+                        onPressed: () {
+                          Navigator.push(
+                            context, MaterialPageRoute(
+                              builder: (context){
+                                return const RePayment();
+                              }
                           ),
-                        ),
-                  ],
-                ),
+                          );
+                        },
+                        icon: Image.asset('assets/images/price_icon.png',width: 70,),
+                        label: const Text('ຮ້ານຄ້າທີ່ຄ້າງຊຳລະ                       ',style: TextStyle(fontSize: 20, color: Colors.green),),
+                      ),
+                    ),
+              ],
             ),
-          ),
         ),
+      ),
     );
   }
 }

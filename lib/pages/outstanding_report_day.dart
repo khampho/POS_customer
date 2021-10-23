@@ -32,31 +32,32 @@ class _OutstandingReportOfDayState extends State<OutstandingReportOfDay> {
     DataId(id: 113, time: '22/01/2022',qty: 7000),
     DataId(id: 118, time: '22/01/2022',qty: 1000),
   ];
+  @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(20),
+      padding: const EdgeInsets.all(20),
       child: Column(
         children: [
           Expanded(
-            child: Container(
+            child: SizedBox(
               width: 300,
               child: Row(
                 children: [
                   Column(
-                    children: [
+                    children: const [
                       Text('ເລກທີ',style: TextStyle(fontSize: 17),),
 
                     ],
                   ),
-                  Spacer(),
+                  const Spacer(),
                   Column(
-                    children: [
+                    children: const [
                       Text('ວັນທີ',style: TextStyle(fontSize: 17))
                     ],
                   ),
-                  Spacer(),
+                  const Spacer(),
                   Column(
-                    children: [
+                    children: const [
                       Text('ຈຳນວນ',style: TextStyle(fontSize: 17))
                     ],
 
@@ -66,7 +67,7 @@ class _OutstandingReportOfDayState extends State<OutstandingReportOfDay> {
             ),
           ),
 
-          Container(
+          SizedBox(
             height: 560,
             width: 300,
             //padding: EdgeInsets.only(top: 20),
@@ -77,15 +78,15 @@ class _OutstandingReportOfDayState extends State<OutstandingReportOfDay> {
                 return SingleChildScrollView(
                   child:Row(
                     children: [
-                      Text(_Data[index].id.toString() ,style: TextStyle(fontSize: 15),),
-                      Spacer(),
-                      Text(_Data[index].time,style: TextStyle(fontSize: 15),),
-                      Spacer(),
-                      Text(_Data[index].qty.toString()+ " ກີບ",style: TextStyle(fontSize: 15),)
+                      Text(_Data[index].id.toString() ,style: const TextStyle(fontSize: 15),),
+                      const Spacer(),
+                      Text(_Data[index].time,style: const TextStyle(fontSize: 15),),
+                      const Spacer(),
+                      Text(_Data[index].qty.toString()+ " ກີບ",style: const TextStyle(fontSize: 15),)
                     ],
                   ),
                 );
-              }, separatorBuilder: (BuildContext context, int index) => Divider(),
+              }, separatorBuilder: (BuildContext context, int index) => const Divider(),
             ),
           ),
         ],

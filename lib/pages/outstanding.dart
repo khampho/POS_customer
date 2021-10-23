@@ -16,16 +16,16 @@ class _OutStandingState extends State<OutStanding> {
       child: Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.green,
-          title: Text('ລາຍງານການຖອກຊຳລະ'),
-          bottom: TabBar(
+          title: const Text('ລາຍງານການຖອກຊຳລະ'),
+          bottom: const TabBar(
             tabs: [
               Tab(child: Text('ລາຍວັນ',style: TextStyle(fontSize: 18),)),
               Tab(child: Text('ລາຍເດືອນ',style: TextStyle(fontSize: 18),)),
             ],
           ),
         ),
-        body:  TabBarView(
-          children: const <Widget>[
+        body:  const TabBarView(
+          children: <Widget>[
             OutstandingReportOfDay(),
             OutstandingReportOfDay(),
 

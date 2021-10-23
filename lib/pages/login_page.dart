@@ -17,12 +17,10 @@ class MyCustomFormState extends State<MyCustomForm> {
   final password = TextEditingController();
   var mail = "admin123@gmail.com";
   var pass = "123";
-  @override
   void showData() {
 
     print('ok');
   }
-  @override
   void showError() {
 
     print(email.text);
@@ -31,7 +29,7 @@ class MyCustomFormState extends State<MyCustomForm> {
   Widget build(BuildContext context) {
     // Build a Form widget using the _formKey created above.
     return Container(
-      padding: EdgeInsets.only(left: 35),
+      padding: const EdgeInsets.only(left: 35),
       child: Form(
         key: _formKey,
         child: Column(
@@ -49,7 +47,7 @@ class MyCustomFormState extends State<MyCustomForm> {
                       ),
                         Container(
                           width: 300,
-                          padding: EdgeInsets.only(top: 30),
+                          padding: const EdgeInsets.only(top: 30),
                           child:  TextFormField(
                               validator: (value) {
                                 if (value == null || value.isEmpty) {
@@ -65,14 +63,14 @@ class MyCustomFormState extends State<MyCustomForm> {
                               decoration: InputDecoration(
                                   focusedBorder: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(30),
-                                    borderSide: BorderSide(
+                                    borderSide: const BorderSide(
                                       color: Colors.green,
                                       width: 2,
                                     ),
                                   ),
                                 enabledBorder: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(30),
-                                  borderSide: BorderSide(
+                                  borderSide: const BorderSide(
                                     color: Colors.lightGreen,
                                     width: 2.0,
                                   ),
@@ -82,8 +80,8 @@ class MyCustomFormState extends State<MyCustomForm> {
                                     borderRadius: BorderRadius.circular(30),
                                   ),
 
-                                  labelText: 'ອີເມລ',labelStyle: TextStyle(color: Colors.green),
-                                  prefixIcon: Icon(
+                                  labelText: 'ອີເມລ',labelStyle: const TextStyle(color: Colors.green),
+                                  prefixIcon: const Icon(
                                     Icons.email,
                                     color: Colors.green,
                                     size: 30.0,
@@ -91,7 +89,7 @@ class MyCustomFormState extends State<MyCustomForm> {
                           ),
                         ),
                       const SizedBox(height: 10),
-                        Container(
+                        SizedBox(
                           width: 300,
                           child: TextFormField(
                               validator: (value) {
@@ -108,14 +106,14 @@ class MyCustomFormState extends State<MyCustomForm> {
                               decoration: InputDecoration(
                                   focusedBorder: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(30),
-                                    borderSide: BorderSide(
+                                    borderSide: const BorderSide(
                                       color: Colors.green,
                                       width: 2
                                     ),
                                   ),
                                   enabledBorder: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(30),
-                                    borderSide: BorderSide(
+                                    borderSide: const BorderSide(
                                       color: Colors.lightGreen,
                                       width: 2.0,
                                     ),
@@ -124,8 +122,8 @@ class MyCustomFormState extends State<MyCustomForm> {
                                     borderSide: const BorderSide(color: Colors.green, width: 2.5),
                                     borderRadius: BorderRadius.circular(30),
                                   ),
-                                  labelText: 'ລະຫັດຜ່ານ',labelStyle: TextStyle(color: Colors.green),
-                                  prefixIcon: Icon(
+                                  labelText: 'ລະຫັດຜ່ານ',labelStyle: const TextStyle(color: Colors.green),
+                                  prefixIcon: const Icon(
                                     Icons.password_outlined,
                                     color: Colors.green,
                                     size: 30.0,
@@ -134,7 +132,7 @@ class MyCustomFormState extends State<MyCustomForm> {
                       ),
                          Container(
                            width: 300,
-                           padding: EdgeInsets.only(top: 30),
+                           padding: const EdgeInsets.only(top: 30),
                            child: ElevatedButton(
                             style: TextButton.styleFrom(
                               padding: const EdgeInsets.all(16.0),
@@ -143,7 +141,7 @@ class MyCustomFormState extends State<MyCustomForm> {
                               textStyle: const TextStyle(fontSize: 20,),
                                 shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(30.0),
-                                    side: BorderSide(color: Colors.lightGreen)
+                                    side: const BorderSide(color: Colors.lightGreen)
                                 )
                             ),
                             onPressed: () {
@@ -156,7 +154,7 @@ class MyCustomFormState extends State<MyCustomForm> {
                                 if( mail == email.text && pass == password.text){
                                   Navigator.push(context,MaterialPageRoute(
                                       builder: (context){
-                                        return HomeScreen();
+                                        return const HomeScreen();
                                       }
                                   )
                                   );
@@ -177,7 +175,7 @@ class MyCustomFormState extends State<MyCustomForm> {
                   ),
                 ),
                ),
-                Align(
+                const Align(
                   alignment: Alignment.bottomCenter,
                   child: Text("ຊື່ຕະຫຼາດ",style: TextStyle(fontSize: 15),),
                 )

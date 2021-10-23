@@ -82,7 +82,7 @@ class _CustomerIncomeState extends State<CustomerIncome> {
                               child:Text('ຜູ້ຈ່າຍເງິນ : ນາງ ສົມສີ ',style: TextStyle(fontWeight: FontWeight.bold),),
 
                             ),
-                            Spacer(),
+                            const Spacer(),
                             Container(
                               padding: EdgeInsets.only(left: 30,bottom: 10),
                               child: Text('ເດືອນ : 04/2021'),

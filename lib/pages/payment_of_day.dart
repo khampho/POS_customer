@@ -13,74 +13,59 @@ class PaymentOfDay extends StatefulWidget {
 class _PaymentOfDayState extends State<PaymentOfDay> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Scaffold(
-        appBar: AppBar(
-          title: Text('ໜ້າຫຼັກ'),
-          backgroundColor: Colors.green,
-        ),
-          body: SingleChildScrollView(
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('ໜ້າຫຼັກ'),
+        backgroundColor: Colors.green,
+      ),
+        body: Container(
+          padding: const EdgeInsets.all(20),
+          child: SingleChildScrollView(
                 child: Column(
                 children: [
-                  const SizedBox(height: 20,),
-                    Container(
-                      child: Row(
-                       // mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Container(
-                            padding: EdgeInsets.only(left: 10),
-                            child:Image.asset("assets/images/logo.jpg",
-                              width: 100,
-                            ),
-                          ),
-                          Spacer(),
-                          Container(
-                            child: TextButton.icon(
-                              style: ButtonStyle(
-                                  backgroundColor:
-                                  MaterialStateProperty.all(Colors.white)),
-                              onPressed: () {
-                                Navigator.push(
-                                  context, MaterialPageRoute(
-                                    builder: (context){
-                                      return QrScan();
-                                    }
-                                ),
-                                );
-                              },
-                              icon: Image.asset("assets/images/scan.png",
-                                width: 70,
-                                color: Colors.green,
+                    Row(
+                     // mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        IconButton(
+                            onPressed: (){},
+                            icon: const Icon(
+                              Icons.favorite,
+                              color: Colors.green,
+                              size: 60,
+                            )
+                        ),
+                        const Spacer(),
+                        IconButton(
+                            onPressed: (){},
+                            icon: const Icon(
+                                Icons.qr_code,
+                              color: Colors.green,
+                              size: 60,
+                            )
+                        ),
+                        const Spacer(),
+                        IconButton(
+                            onPressed: (){
+                              Navigator.push(
+                                context, MaterialPageRoute(
+                                  builder: (context){
+                                    return const Profile();
+                                  }
                               ),
-                              label: Text(''),
-                            ),
-                          ),
-                          Spacer(),
-                          Container(
-                            child: TextButton.icon(
-                              style: ButtonStyle(
-                                  backgroundColor:
-                                  MaterialStateProperty.all(Colors.white)),
-                              onPressed: () {
-                                Navigator.push(
-                                    context, MaterialPageRoute(
-                                     builder: (context){
-                                      return Profile();
-                                      }
-                                  ),
-                                );
-                              },
-                              icon: Image.asset('assets/images/user.png',width: 70,),
-                              label: Text(''),
-                            ),
-                          )
-                        ],
-                      ),
+                              );
+                            },
+                            icon: const Icon(
+                              Icons.person,
+                              color: Colors.green,
+                              size: 60,
+                            )
+                        ),
+                      ],
                     ),
                     const SizedBox(height: 50,),
                     Container(
                       width: 300,
-                        padding: EdgeInsets.only(bottom: 25),
+                        padding: const EdgeInsets.only(bottom: 25),
                         child: TextField(
                           decoration: InputDecoration(
                               focusedBorder:OutlineInputBorder(
@@ -89,7 +74,7 @@ class _PaymentOfDayState extends State<PaymentOfDay> {
                               ),
                               enabledBorder: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(30),
-                                borderSide: BorderSide(
+                                borderSide: const BorderSide(
                                   color: Colors.lightGreen,
                                   width: 2.0,
                                 ),
@@ -98,11 +83,11 @@ class _PaymentOfDayState extends State<PaymentOfDay> {
                                 borderSide: const BorderSide(color: Colors.green, width: 2.5),
                                 borderRadius: BorderRadius.circular(30),
                               ),
-                              label: Text('ລະຫັດ : ',style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold,color: Colors.green),)
+                              label: const Text('ລະຫັດ : ',style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold,color: Colors.green),)
                           ),
                       ),
                     ),
-                    Container(
+                    SizedBox(
                       width: 300,
                         child: TextButton(
                             onPressed: (){
@@ -122,17 +107,17 @@ class _PaymentOfDayState extends State<PaymentOfDay> {
                             textStyle: const TextStyle(fontSize: 20),
                                 shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(30.0),
-                                    side: BorderSide(color: Colors.green),
+                                    side: const BorderSide(color: Colors.green),
                                 )
                             ),
 
 
-                            child: Text('ອອກບິນ',style: TextStyle(fontWeight: FontWeight.bold))
+                            child: const Text('ອອກບິນ',style: TextStyle(fontWeight: FontWeight.bold))
                         )
                     ),
                   Container(
-                    padding: EdgeInsets.only(top: 80),
-                    child: Text('ລາຍຮັບມື້ນີ້ : ',style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold),),
+                    padding: const EdgeInsets.only(top: 80),
+                    child: const Text('ລາຍຮັບມື້ນີ້ : ',style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold),),
                   ),
                   Padding(
                     padding: const EdgeInsets.all(30.0),
@@ -140,13 +125,13 @@ class _PaymentOfDayState extends State<PaymentOfDay> {
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
                         color: Colors.white,
-                        boxShadow: [
+                        boxShadow: const [
                           BoxShadow(color: Colors.lightGreen, spreadRadius: 3),
                         ],
                       ),
                       height: 60,
 
-                      child: Center(
+                      child: const Center(
                         child: Text('ເງິນລວມ : 350,000  ກີບ',style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold)),
                       ),
                     ),
@@ -154,7 +139,7 @@ class _PaymentOfDayState extends State<PaymentOfDay> {
                 ],
               ),
           ),
-      ),
+        ),
     );
   }
 }
