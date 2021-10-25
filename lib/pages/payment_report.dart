@@ -105,6 +105,7 @@ class _PaymentReportState extends State<PaymentReport> {
             ),
         ),
       ),
+      backgroundColor: Colors.grey,
     );
   }
 }

@@ -19,6 +19,16 @@ class _BillState extends State<Bill> {
     Data(no: 3,lists: 'ຂີ້ເຫຍື້ອ',service: 30000),
     Data(no: 4,lists: 'ຂີ້ເຫຍື້ອ',service: 30000),
     Data(no: 5,lists: 'ຂີ້ເຫຍື້ອ',service: 30000),
+    Data(no: 1,lists: 'ຂີ້ເຫຍື້ອ',service: 30000),
+    Data(no: 2,lists: 'ຂີ້ເຫຍື້ອ',service: 30000),
+    Data(no: 3,lists: 'ຂີ້ເຫຍື້ອ',service: 30000),
+    Data(no: 4,lists: 'ຂີ້ເຫຍື້ອ',service: 30000),
+    Data(no: 5,lists: 'ຂີ້ເຫຍື້ອ',service: 30000),
+    Data(no: 1,lists: 'ຂີ້ເຫຍື້ອ',service: 30000),
+    Data(no: 2,lists: 'ຂີ້ເຫຍື້ອ',service: 30000),
+    Data(no: 3,lists: 'ຂີ້ເຫຍື້ອ',service: 30000),
+    Data(no: 4,lists: 'ຂີ້ເຫຍື້ອ',service: 30000),
+    Data(no: 5,lists: 'ຂີ້ເຫຍື້ອ',service: 30000),
 
   ];
   @override
@@ -29,8 +39,7 @@ class _BillState extends State<Bill> {
         centerTitle: true,
         backgroundColor: Colors.green,
       ),
-      body: SingleChildScrollView(
-        child: Container(
+      body:Container(
           padding: const EdgeInsets.all(10),
           child: Column(
             children: [
@@ -68,100 +77,104 @@ class _BillState extends State<Bill> {
                   ],
                 ),
               ),
-              Card(
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(15.0),
-                ),
-                child: Container(
-                  padding: const EdgeInsets.all(10),
-                  child: Column(
-                    children: [
-                       Row(
-                        children: [
-                          Image.asset('assets/images/logo.jpg',width: 90,),
-                          const Spacer(),
-                          Container(
-                            padding: const EdgeInsets.only(left: 30),
-                            child: const Text('ຕະຫຼາດ ໂພນຕ້ອງ'),
-                          ),
-                        ],
-                      ),
-                      const Text('ໃບບິນຕະຫຼາດ',style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold),),
-                      Row(
-                        children: [
-                          Text(_date),
-                          const Spacer(),
-                          Container(
-                            padding: const EdgeInsets.only(left: 30,bottom: 10),
-                            child: const Text('ເລກທີ່ : 203'),
-                          ),
-                        ],
-                      ),
-                      Row(
-                        children: const [
-                          Text('ລຳດັບ'),
-                          Spacer(),
-                          Text('ລາຍການ'),
-                          Spacer(),
-                          Text('ຄ່າບໍລິການ')
-                        ],
-                      ),
-                      ListView.separated(
-                        shrinkWrap: true,
-                        itemCount: _data.length,
-                        itemBuilder: (context, int index) {
-                          return SingleChildScrollView(
+              Expanded(
+              child: SingleChildScrollView(
+                child: Card(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(15.0),
+                  ),
+                  child: Container(
+                    padding: const EdgeInsets.all(10),
+                    child: Column(
 
-                            child:Row(
-                              children: [
-                                Text(_data[index].no.toString() ,style: const TextStyle(fontSize: 15),),
-                                const Spacer(),
-                                Text(_data[index].lists,style: const TextStyle(fontSize: 15),),
-                                const Spacer(),
-                                Text(_data[index].service.toString()+ " ກີບ",style: TextStyle(fontSize: 15),)
+                      children: [
+                         Row(
+                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Image.asset('assets/images/logo.jpg',width: 90,),
 
-                              ],
-                            ),
-                          );
-                        }, separatorBuilder: (BuildContext context, int index) => Divider(),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.all(30.0),
-                        child: Container(
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10),
-                            color: Colors.white,
-                            boxShadow: const [
-                              BoxShadow(color: Colors.grey, spreadRadius: 3),
+                            const Text('ຕະຫຼາດ ໂພນຕ້ອງ'),
+
+                          ],
+                        ),
+                        const Text('ໃບບິນຕະຫຼາດ',style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold),),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(_date),
+
+                            const Text('ເລກທີ່ : 203'),
+
+                          ],
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(top: 15),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: const [
+                              Text('ລຳດັບ'),
+                              Text('ລາຍການ'),
+                              Text('ຄ່າບໍລິການ')
                             ],
                           ),
-                          height: 60,
+                        ),
+                        ListView.separated(
+                          shrinkWrap: true,
+                          itemCount: _data.length,
+                          itemBuilder: (context, int index) {
+                            return Center(
+                              child:Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Text(_data[index].no.toString() ,style: const TextStyle(fontSize: 15),),
 
-                          child: const Center(
-                            child: Text('ເງິນລວມ : 350,000  ກີບ',style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold)),
+                                  Text(_data[index].lists,style: const TextStyle(fontSize: 15),),
+
+                                  Text(_data[index].service.toString(),style: TextStyle(fontSize: 15),)
+
+                                ],
+                              ),
+                            );
+                          }, separatorBuilder: (BuildContext context, int index) => Divider(),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(30.0),
+                          child: Container(
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                              color: Colors.white,
+                              boxShadow: const [
+                                BoxShadow(color: Colors.grey, spreadRadius: 3),
+                              ],
+                            ),
+                            height: 60,
+
+                            child: const Center(
+                              child: Text('ເງິນລວມ : 350,000  ກີບ',style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold)),
+                            ),
                           ),
                         ),
-                      ),
-                      Container(
-                        padding: const EdgeInsets.only(left: 200),
-                        child: const Text('ຜູ້ເກັບເງິນ : '),
-                      ),
-                      Container(
-                        padding: const EdgeInsets.only(left: 150),
-                        child: const Text('ທ້າວ ຈັນທອງ ນາມສົມໝຸດ'),
-                      ),
-                      Container(
-                        padding: const EdgeInsets.only(bottom: 20,top: 40),
-                        child: const Text('ຫ້ອງການຕະຫຼາດ :  030 9797977'),
-                      )
-                    ],
+                        Container(
+                          padding: const EdgeInsets.only(left: 200),
+                          child: const Text('ຜູ້ເກັບເງິນ : '),
+                        ),
+                        Container(
+                          padding: const EdgeInsets.only(left: 150),
+                          child: const Text('ທ້າວ ຈັນທອງ ນາມສົມໝຸດ'),
+                        ),
+                        Container(
+                          padding: const EdgeInsets.only(bottom: 20,top: 40),
+                          child: const Text('ຫ້ອງການຕະຫຼາດ :  030 9797977'),
+                        )
+                      ],
+                    ),
                   ),
                 ),
+              )
               )
             ],
           ),
         ),
-      ),
     );
   }
 }

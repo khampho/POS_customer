@@ -29,6 +29,7 @@ class MyCustomFormState extends State<MyCustomForm> {
   Widget build(BuildContext context) {
     // Build a Form widget using the _formKey created above.
     return Container(
+      color: Colors.black12,
       padding: const EdgeInsets.only(left: 35),
       child: Form(
         key: _formKey,

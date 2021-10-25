@@ -129,7 +129,7 @@ class _CustomerIncomeState extends State<CustomerIncome> {
                                   const Spacer(),
                                   Text(_data[index].lists,style: const TextStyle(fontSize: 15),),
                                   const Spacer(),
-                                  Text(_data[index].service.toString()+ " ກີບ",style: TextStyle(fontSize: 15),)
+                                  Text(_data[index].service.toString(),style: TextStyle(fontSize: 15),)
 
                                 ],
                               ),

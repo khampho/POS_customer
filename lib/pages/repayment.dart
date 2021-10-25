@@ -26,6 +26,7 @@ class _RePaymentState extends State<RePayment> {
           child: Text('Content'),
         ),
       ),
+      backgroundColor: Colors.white54 ,
     );
   }
 }

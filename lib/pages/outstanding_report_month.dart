@@ -1,25 +1,24 @@
 import 'package:flutter/material.dart';
-class OutstandingReportOfDay extends StatefulWidget {
-  const OutstandingReportOfDay({Key? key}) : super(key: key);
+class OutStandingReportOfMonth extends StatefulWidget {
+  const OutStandingReportOfMonth({Key? key}) : super(key: key);
 
   @override
-  _OutstandingReportOfDayState createState() => _OutstandingReportOfDayState();
+  _OutStandingReportOfMonthState createState() => _OutStandingReportOfMonthState();
 }
 
-class _OutstandingReportOfDayState extends State<OutstandingReportOfDay> {
-  @override
+class _OutStandingReportOfMonthState extends State<OutStandingReportOfMonth> {
   final List<DataId> _Data = [
-    DataId(id: 111, time: '22/01/2022',qty: 2000),
+    DataId(id: 111, time: '22/01/2022',qty: 5000),
     DataId(id: 112, time: '22/01/2022',qty: 5000),
-    DataId(id: 113, time: '22/01/2022',qty: 7000),
-    DataId(id: 114, time: '22/01/2022',qty: 1200),
-    DataId(id: 111, time: '22/01/2022',qty: 2000),
-    DataId(id: 112, time: '22/01/2022',qty: 5000),
-    DataId(id: 114, time: '22/01/2022',qty: 1000),
-    DataId(id: 111, time: '22/01/2022',qty: 2000),
-    DataId(id: 112, time: '22/01/2022',qty: 5000),
-    DataId(id: 113, time: '22/01/2022',qty: 7000),
-    DataId(id: 118, time: '22/01/2022',qty: 1000),
+    DataId(id: 113, time: '22/01/2022',qty: 6000),
+    DataId(id: 114, time: '22/01/2022',qty: 8200),
+    DataId(id: 111, time: '22/01/2022',qty: 8000),
+    DataId(id: 112, time: '22/01/2022',qty: 2000),
+    DataId(id: 114, time: '22/01/2022',qty: 4400),
+    DataId(id: 111, time: '22/01/2022',qty: 4400),
+    DataId(id: 112, time: '22/01/2022',qty: 6000),
+    DataId(id: 113, time: '22/01/2022',qty: 8000),
+    DataId(id: 118, time: '22/01/2022',qty: 8000),
     DataId(id: 111, time: '22/01/2022',qty: 2000),
     DataId(id: 112, time: '22/01/2022',qty: 5000),
     DataId(id: 113, time: '22/01/2022',qty: 7000),

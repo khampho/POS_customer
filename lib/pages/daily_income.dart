@@ -45,86 +45,81 @@ class _DailyIncomeState extends State<DailyIncome> {
         backgroundColor: Colors.green,
       ),
       body:  Container(
-            padding: const EdgeInsets.all(20),
+            padding: const EdgeInsets.all(10),
               child: Column(
                 children: [
+
                   Container(
                     width: 300,
-                    padding: const EdgeInsets.only(top: 20,left: 20,right: 20),
-                    child: TextField(
-                        enabled: false,
-                        decoration: InputDecoration(
-                            focusedBorder:OutlineInputBorder(
-                              borderSide: const BorderSide(color: Colors.green, width: 2.5),
-                              borderRadius: BorderRadius.circular(2.0),
-                            ),
-
-                            border: OutlineInputBorder(
-                              borderSide: const BorderSide(color: Colors.green, width: 2.5),
-                              borderRadius: BorderRadius.circular(2.0),
-                            ),
-                            labelText: 'ເງິນລວມ : 200,000 ກີບ',labelStyle: const TextStyle(color: Colors.green,fontSize: 20),
-                            prefixIcon: const Icon(Icons.price_check))
+                    height: 50,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: Colors.white,
+                      boxShadow: const [
+                        BoxShadow(color: Colors.grey, spreadRadius: 3),
+                      ],
+                    ),
+                    child: const Center(
+                      child: Text('ເງິນລວມ : 300,000  ກີບ',style: TextStyle(fontSize: 17,fontWeight: FontWeight.bold)),
                     ),
                   ),
                   Expanded(
-                    child: Container(
-                      padding: const EdgeInsets.only(top: 20),
-                      width: 300,
-                      child: Row(
-                        children: [
-                          Column(
-                            children: const [
-                              Text('ເລກທີ',style: TextStyle(fontSize: 20),),
+                      child: Container(
+                          padding: const EdgeInsets.only(top: 20),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            Column(
+                              children: const [
+                                Text('ເລກທີ',style: TextStyle(fontSize: 20,color: Colors.white),),
 
-                            ],
-                          ),
-                          const Spacer(),
-                          Column(
-                            children: const [
-                              Text('ເວລາ',style: TextStyle(fontSize: 20))
-                            ],
-                          ),
-                          const Spacer(),
-                          Column(
-                            children: const [
-                              Text('ຈຳນວນ',style: TextStyle(fontSize: 20))
-                            ],
+                              ],
+                            ),
 
-                          )
-                        ],
+                            Column(
+                              children: const [
+                                Text('ເວລາ',style: TextStyle(fontSize: 20,color: Colors.white))
+                              ],
+                            ),
+
+                            Column(
+                              children: const [
+                                Text('ຈຳນວນ',style: TextStyle(fontSize: 20,color: Colors.white))
+                              ],
+
+                            )
+                          ],
+                        ),
                       ),
+                    ),
+                  SizedBox(
+                    height: 570,
+                    //padding: EdgeInsets.only(top: 20),
+                    child: ListView.separated(
+                      shrinkWrap: true,
+                      itemCount: _Data.length,
+                      itemBuilder: (context, int index) {
+                        return SingleChildScrollView(
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              Text(_Data[index].id.toString() ,style: const TextStyle(fontSize: 15,color: Colors.white),),
+
+                              Text(_Data[index].time,style: const TextStyle(fontSize: 15,color: Colors.white),),
+
+                              Text(_Data[index].qty.toString()+ " ກີບ",style: const TextStyle(fontSize: 15,color: Colors.white),)
+
+                            ],
+                          ),
+                        );
+                      }, separatorBuilder: (BuildContext context, int index) => const Divider(),
                     ),
                   ),
 
-
-                  SizedBox(
-                    height: 520,
-                    width: 300,
-                    //padding: EdgeInsets.only(top: 20),
-                        child: ListView.separated(
-                              shrinkWrap: true,
-                              itemCount: _Data.length,
-                              itemBuilder: (context, int index) {
-                                return SingleChildScrollView(
-
-                                  child:Row(
-                                    children: [
-                                      Text(_Data[index].id.toString() ,style: const TextStyle(fontSize: 15),),
-                                      const Spacer(),
-                                      Text(_Data[index].time,style: const TextStyle(fontSize: 15),),
-                                      const Spacer(),
-                                      Text(_Data[index].qty.toString()+ " ກີບ",style: TextStyle(fontSize: 15),)
-
-                                    ],
-                                  ),
-                                );
-                              }, separatorBuilder: (BuildContext context, int index) => Divider(),
-                          ),
-                  ),
                 ],
               ),
             ),
+      backgroundColor: Colors.white38,
       );
   }
 }
