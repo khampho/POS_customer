@@ -32,7 +32,6 @@ class _OutStandingState extends State<OutStanding> {
 
           ],
         ),
-        backgroundColor: Colors.white38,
       ),
     );
   }

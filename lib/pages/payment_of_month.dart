@@ -12,14 +12,20 @@ class _PaymentOfMonthState extends State<PaymentOfMonth> {
   String zone = 'Zone A';
   ///
   final List<Customer> _customer = [
-    Customer(id: 1, name: "ຮ້ານ ນາງວຽງແກ້ວ",color: 0xff123456),
-    Customer(id: 2, name: "ຮ້ານ ນາງພູວັນ",color: 0xff123456),
-    Customer(id: 3, name: "ຮ້ານ ນາງສົມຈິດ",color: 0xFFB74093),
-    Customer(id: 4, name: "ຮ້ານ ນາງແສງຈັນ",color: 0xff123456),
-    Customer(id: 1, name: "ຮ້ານ ນາງວຽງແກ້ວ",color: 0xff123456),
-    Customer(id: 2, name: "ຮ້ານ ນາງພູວັນ",color: 0xff123456),
-    Customer(id: 3, name: "ຮ້ານ ນາງສົມຈິດ",color: 0xFFB74093),
-    Customer(id: 4, name: "ຮ້ານ ນາງແສງຈັນ",color: 0xff123456),
+    Customer(id: 1, name: "ຮ້ານ ນາງວຽງແກ້ວ",),
+    Customer(id: 2, name: "ຮ້ານ ນາງພູວັນ",),
+    Customer(id: 3, name: "ຮ້ານ ນາງສົມຈິດ",),
+    Customer(id: 4, name: "ຮ້ານ ນາງແສງຈັນ",),
+    Customer(id: 1, name: "ຮ້ານ ນາງວຽງແກ້ວ",),
+    Customer(id: 2, name: "ຮ້ານ ນາງພູວັນ",),
+    Customer(id: 3, name: "ຮ້ານ ນາງສົມຈິດ",),
+    Customer(id: 4, name: "ຮ້ານ ນາງແສງຈັນ",),
+    Customer(id: 3, name: "ຮ້ານ ນາງສົມຈິດ",),
+    Customer(id: 4, name: "ຮ້ານ ນາງແສງຈັນ",),
+    Customer(id: 1, name: "ຮ້ານ ນາງວຽງແກ້ວ",),
+    Customer(id: 2, name: "ຮ້ານ ນາງພູວັນ"),
+    Customer(id: 3, name: "ຮ້ານ ນາງສົມຈິດ",),
+    Customer(id: 4, name: "ຮ້ານ ນາງແສງຈັນ",),
   ];
   @override
   Widget build(BuildContext context) {
@@ -71,7 +77,7 @@ class _PaymentOfMonthState extends State<PaymentOfMonth> {
             Expanded(
                 child: Container(
                   width: 300,
-                  padding: EdgeInsets.only(left: 20,right: 20),
+                  padding: const EdgeInsets.only(left: 20,right: 20),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(30),
                     color: Colors.white,
@@ -98,7 +104,7 @@ class _PaymentOfMonthState extends State<PaymentOfMonth> {
                             .map<DropdownMenuItem<String>>((String value) {
                           return DropdownMenuItem<String>(
                             value: value,
-                            child: Text(value,style: TextStyle(fontSize: 20),),
+                            child: Text(value,style: const TextStyle(fontSize: 20),),
                           );
                         }).toList(),
                       )
@@ -111,62 +117,53 @@ class _PaymentOfMonthState extends State<PaymentOfMonth> {
               width: 300,
                  child: Container(
                    padding: const EdgeInsets.only(top: 20,),
-                   child: ListView.separated(
-                     shrinkWrap: true,
-                     itemCount: _customer.length,
-                     itemBuilder: (context, int index) {
-                       return SingleChildScrollView(
-                           child: Container(
-                             height: 50,
-                               decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(20),
-                                 color: Color(_customer[index].color),
-                                 // boxShadow: const [
-                                 //   BoxShadow(color: Colors.lightGreen, spreadRadius: 2),
-                                 // ],
-                               ),
+                   child: ListView.builder(
+                       itemCount: _customer.length,
+                       itemBuilder: (context,index){
+                         return _builItem(index);
+                       }
 
-                           child: ListTile(
-                             title:TextButton.icon(
-                               style: TextButton.styleFrom(
-                                   padding: EdgeInsets.zero,
-                                   minimumSize: Size(50, 30),
-                                   alignment: Alignment.centerLeft,
-                               ),
-                               onPressed: (){
-                                 //print(_customer[index].name);
-                                 Navigator.push(context, MaterialPageRoute(
-                                              builder: (context){
-                                                return const CustomerIncome();
-                                              })
-                                 );
-                               },
-                               //icon: const Icon(Icons.view_comfy_outlined,color: Colors.green,),
-
-                               label: Text(
-                                 _customer[index].name,style: const TextStyle(fontSize: 18,color: Colors.white)
-                               ),
-                               icon: const Icon(Icons.arrow_right,size: 40,color: Colors.white,),
-                             ),
-                           ),
-                        ),
-                       );
-                     }, separatorBuilder: (BuildContext context, int index) => const Divider(),
                    ),
                  ),
                ),
           ],
         ),
       ),
-      backgroundColor: Colors.grey,
+     // backgroundColor: Colors.green,
+    );
+  }
+
+  Widget _builItem(int index) {
+    return Card(
+      child: Row(
+        children: [
+            TextButton.icon(
+              style: TextButton.styleFrom(
+              padding: EdgeInsets.zero,
+              minimumSize: const Size(50, 30),
+              alignment: Alignment.centerLeft,
+              ),
+              onPressed: (){
+              //print(_customer[index].name);
+              Navigator.push(context, MaterialPageRoute(
+              builder: (context){
+                return const CustomerIncome();
+                  })
+                );
+              },
+              //icon: const Icon(Icons.view_comfy_outlined,color: Colors.green,),
+
+              label: Text(_customer[index].name,style: const TextStyle(fontSize: 18,color: Colors.green)),
+              icon: const Icon(Icons.arrow_right,size: 40,color: Colors.green,),
+            ),
+        ],
+      ),
     );
   }
 }
-
 class Customer {
   var id;
   var name;
-  var color;
-  Customer({this.id, this.name, this.color});
+  Customer({this.id, this.name,});
 }
 

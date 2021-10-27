@@ -47,18 +47,18 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
         child: _widgetOptions.elementAt(_selectedIndex),
       ),
       bottomNavigationBar: BottomNavigationBar(
-        iconSize: 40,
+        iconSize: 50,
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Icon(Icons.pages),
-            label: 'ເກັບເງິນມື້',
+            icon: Icon(Icons.home),
+            label: 'ໜ້າຫຼັກ',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.calendar_view_month_sharp),
+            icon: Icon(Icons.attach_money_outlined),
             label: 'ລາຍເດືອນ',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.report),
+            icon: Icon(Icons.report_gmailerrorred_outlined),
             label: 'ລາຍງານ',
           ),
         ],

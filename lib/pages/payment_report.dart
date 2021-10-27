@@ -13,19 +13,20 @@ class PaymentReport extends StatefulWidget {
 class _PaymentReportState extends State<PaymentReport> {
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('ລາຍງານ'),
 
         backgroundColor: Colors.green,
       ),
-      body: Container(
-        padding: const EdgeInsets.only(top: 20),
+      body: Card(
+        color: Colors.white70,
         child: SingleChildScrollView(
             child: Column(
               children: [
+                const SizedBox(height: 5,),
                    Card(
-
                         child: TextButton.icon(
                           style: ButtonStyle(
                               backgroundColor:
@@ -101,11 +102,13 @@ class _PaymentReportState extends State<PaymentReport> {
                         label: const Text('ຮ້ານຄ້າທີ່ຄ້າງຊຳລະ                       ',style: TextStyle(fontSize: 20, color: Colors.green),),
                       ),
                     ),
+                const SizedBox(height: 350,),
               ],
             ),
         ),
+
       ),
-      backgroundColor: Colors.grey,
+     // backgroundColor: Colors.green,
     );
   }
 }

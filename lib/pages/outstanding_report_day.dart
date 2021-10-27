@@ -42,26 +42,11 @@ class _OutstandingReportOfDayState extends State<OutstandingReportOfDay> {
             child: SizedBox(
               width: 300,
               child: Row(
-                children: [
-                  Column(
-                    children: const [
-                      Text('ເລກທີ',style: TextStyle(fontSize: 17,color: Colors.white),),
-
-                    ],
-                  ),
-                  const Spacer(),
-                  Column(
-                    children: const [
-                      Text('ວັນທີ',style: TextStyle(fontSize: 17,color: Colors.white))
-                    ],
-                  ),
-                  const Spacer(),
-                  Column(
-                    children: const [
-                      Text('ຈຳນວນ',style: TextStyle(fontSize: 17,color: Colors.white))
-                    ],
-
-                  )
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: const [
+                      Text('ເລກທີ',style: TextStyle(fontSize: 17,),),
+                      Text('ວັນທີ',style: TextStyle(fontSize: 17,)),
+                      Text('ຈຳນວນ',style: TextStyle(fontSize: 17)),
                 ],
               ),
             ),
@@ -78,11 +63,11 @@ class _OutstandingReportOfDayState extends State<OutstandingReportOfDay> {
                 return SingleChildScrollView(
                   child:Row(
                     children: [
-                      Text(_Data[index].id.toString() ,style: const TextStyle(fontSize: 15,color: Colors.white),),
+                      Text(_Data[index].id.toString() ,style: const TextStyle(fontSize: 15,),),
                       const Spacer(),
-                      Text(_Data[index].time,style: const TextStyle(fontSize: 15,color: Colors.white),),
+                      Text(_Data[index].time,style: const TextStyle(fontSize: 15),),
                       const Spacer(),
-                      Text(_Data[index].qty.toString()+ " ກີບ",style: const TextStyle(fontSize: 15,color: Colors.white),)
+                      Text(_Data[index].qty.toString()+ " ກີບ",style: const TextStyle(fontSize: 15),)
                     ],
                   ),
                 );

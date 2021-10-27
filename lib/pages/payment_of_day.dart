@@ -53,8 +53,8 @@ class _PaymentOfDayState extends State<PaymentOfDay> {
                           IconButton(
                               onPressed: (){},
                               icon: const Icon(
-                                Icons.ice_skating,
-                                color: Colors.indigo,
+                                Icons.library_add_check_outlined,
+                                color: Colors.grey,
                                 size: 60,
                               )
                           ),
@@ -67,7 +67,7 @@ class _PaymentOfDayState extends State<PaymentOfDay> {
                               },
                               icon: const Icon(
                                   Icons.qr_code_scanner_outlined,
-                                color: Colors.lightGreen,
+                                color: Colors.green,
                                 size: 60,
                               )
                           ),
@@ -96,6 +96,8 @@ class _PaymentOfDayState extends State<PaymentOfDay> {
                           padding: const EdgeInsets.only(bottom: 25),
                           child: TextField(
                             decoration: InputDecoration(
+                                fillColor: Colors.white,
+                                filled: true, // dont forget this line
                                 focusedBorder:OutlineInputBorder(
                                   borderSide: const BorderSide(color: Colors.green, width: 2.5),
                                   borderRadius: BorderRadius.circular(30),
@@ -164,13 +166,13 @@ class _PaymentOfDayState extends State<PaymentOfDay> {
                         ),
                       ),
                     ),
-                    SizedBox(height: 57,)
+                    const SizedBox(height: 57,)
                   ],
                 ),
             ),
           ),
       ),
-      backgroundColor: Colors.grey,
+      //backgroundColor: Colors.green,
     );
   }
 }

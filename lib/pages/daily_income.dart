@@ -71,20 +71,20 @@ class _DailyIncomeState extends State<DailyIncome> {
                           children: [
                             Column(
                               children: const [
-                                Text('ເລກທີ',style: TextStyle(fontSize: 20,color: Colors.white),),
+                                Text('ເລກທີ',style: TextStyle(fontSize: 20,),),
 
                               ],
                             ),
 
                             Column(
                               children: const [
-                                Text('ເວລາ',style: TextStyle(fontSize: 20,color: Colors.white))
+                                Text('ເວລາ',style: TextStyle(fontSize: 20,))
                               ],
                             ),
 
                             Column(
                               children: const [
-                                Text('ຈຳນວນ',style: TextStyle(fontSize: 20,color: Colors.white))
+                                Text('ຈຳນວນ',style: TextStyle(fontSize: 20,))
                               ],
 
                             )
@@ -103,11 +103,11 @@ class _DailyIncomeState extends State<DailyIncome> {
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
-                              Text(_Data[index].id.toString() ,style: const TextStyle(fontSize: 15,color: Colors.white),),
+                              Text(_Data[index].id.toString() ,style: const TextStyle(fontSize: 15,color: Colors.black87),),
 
-                              Text(_Data[index].time,style: const TextStyle(fontSize: 15,color: Colors.white),),
+                              Text(_Data[index].time,style: const TextStyle(fontSize: 15,color: Colors.black87),),
 
-                              Text(_Data[index].qty.toString()+ " ກີບ",style: const TextStyle(fontSize: 15,color: Colors.white),)
+                              Text(_Data[index].qty.toString()+ " ກີບ",style: const TextStyle(fontSize: 15,color: Colors.black87),)
 
                             ],
                           ),
@@ -119,7 +119,7 @@ class _DailyIncomeState extends State<DailyIncome> {
                 ],
               ),
             ),
-      backgroundColor: Colors.white38,
+     // backgroundColor: Colors.white38,
       );
   }
 }
