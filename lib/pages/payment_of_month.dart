@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'Customer_income.dart';
+import 'bill_market.dart';
 class PaymentOfMonth extends StatefulWidget {
   const PaymentOfMonth({Key? key}) : super(key: key);
 
@@ -10,25 +10,28 @@ class PaymentOfMonth extends StatefulWidget {
 
 class _PaymentOfMonthState extends State<PaymentOfMonth> {
   String zone = 'Zone A';
+
   ///
-  final List<Customer> _customer = [
-    Customer(id: 1, name: "ຮ້ານ ນາງວຽງແກ້ວ",),
-    Customer(id: 2, name: "ຮ້ານ ນາງພູວັນ",),
-    Customer(id: 3, name: "ຮ້ານ ນາງສົມຈິດ",),
-    Customer(id: 4, name: "ຮ້ານ ນາງແສງຈັນ",),
-    Customer(id: 1, name: "ຮ້ານ ນາງວຽງແກ້ວ",),
-    Customer(id: 2, name: "ຮ້ານ ນາງພູວັນ",),
-    Customer(id: 3, name: "ຮ້ານ ນາງສົມຈິດ",),
-    Customer(id: 4, name: "ຮ້ານ ນາງແສງຈັນ",),
-    Customer(id: 3, name: "ຮ້ານ ນາງສົມຈິດ",),
-    Customer(id: 4, name: "ຮ້ານ ນາງແສງຈັນ",),
-    Customer(id: 1, name: "ຮ້ານ ນາງວຽງແກ້ວ",),
-    Customer(id: 2, name: "ຮ້ານ ນາງພູວັນ"),
-    Customer(id: 3, name: "ຮ້ານ ນາງສົມຈິດ",),
-    Customer(id: 4, name: "ຮ້ານ ນາງແສງຈັນ",),
+  final List<Customer> custS = [
+    Customer(id: 1, name: "ຮ້ານ ນາງວຽງແກ້ວ",zone: 'Zone A'),
+    Customer(id: 2, name: "ຮ້ານ ນາງພູວັນ",zone: 'Zone A'),
+    Customer(id: 3, name: "ຮ້ານ ນາງສົມຈິດ",zone: 'Zone A'),
+    Customer(id: 4, name: "ຮ້ານ ນາງແສງຈັນ",zone: 'Zone A'),
+    Customer(id: 1, name: "ຮ້ານ ນາງວຽງແກ້ວ",zone: 'Zone B'),
+    Customer(id: 2, name: "ຮ້ານ ນາງພູວັນ",zone: 'Zone B'),
+    Customer(id: 1, name: "ຮ້ານ ນາງວຽງແກ້ວ",zone: 'Zone B'),
+    Customer(id: 2, name: "ຮ້ານ ນາງພູວັນ",zone: 'Zone B'),
+    Customer(id: 3, name: "ຮ້ານ ນາງສົມຈິດ",zone: 'Zone C'),
+    Customer(id: 4, name: "ຮ້ານ ນາງແສງຈັນ",zone: 'Zone C'),
+    Customer(id: 2, name: "ຮ້ານ ນາງພູວັນ",zone: 'Zone D'),
+    Customer(id: 3, name: "ຮ້ານ ນາງສົມຈິດ",zone: 'Zone D'),
+
   ];
+
+   List<Customer> filtercustS = [];
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('ລາຍເດືອນ'),
@@ -88,6 +91,7 @@ class _PaymentOfMonthState extends State<PaymentOfMonth> {
                   child: DropdownButtonHideUnderline(
                       child:DropdownButton<String>(
                         value: zone,
+
                         icon: const Icon(Icons.arrow_downward,color: Colors.green,),
                         iconSize: 24,
                         elevation: 16,
@@ -96,9 +100,13 @@ class _PaymentOfMonthState extends State<PaymentOfMonth> {
                           color: Colors.deepPurpleAccent,
                         ),
                         onChanged: (String? newZone) {
+                          var rs = custS.where((i) => i.zone == newZone).toList();
                           setState(() {
+
                             zone = newZone!;
+                            filtercustS = rs;
                           });
+
                         },
                         items: <String>['Zone A', 'Zone B', 'Zone C', 'Zone D']
                             .map<DropdownMenuItem<String>>((String value) {
@@ -118,11 +126,10 @@ class _PaymentOfMonthState extends State<PaymentOfMonth> {
                  child: Container(
                    padding: const EdgeInsets.only(top: 20,),
                    child: ListView.builder(
-                       itemCount: _customer.length,
+                       itemCount: filtercustS.length,
                        itemBuilder: (context,index){
                          return _builItem(index);
                        }
-
                    ),
                  ),
                ),
@@ -147,13 +154,13 @@ class _PaymentOfMonthState extends State<PaymentOfMonth> {
               //print(_customer[index].name);
               Navigator.push(context, MaterialPageRoute(
               builder: (context){
-                return const CustomerIncome();
+                return const BillMarket();
                   })
                 );
               },
               //icon: const Icon(Icons.view_comfy_outlined,color: Colors.green,),
 
-              label: Text(_customer[index].name,style: const TextStyle(fontSize: 18,color: Colors.green)),
+              label: Text(filtercustS[index].name,style: const TextStyle(fontSize: 18,color: Colors.green)),
               icon: const Icon(Icons.arrow_right,size: 40,color: Colors.green,),
             ),
         ],
@@ -164,6 +171,7 @@ class _PaymentOfMonthState extends State<PaymentOfMonth> {
 class Customer {
   var id;
   var name;
-  Customer({this.id, this.name,});
+  var zone;
+  Customer({this.id, this.name,this.zone});
 }
 

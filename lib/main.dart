@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 import 'package:flutter_pos/pages/login_page.dart';
 
@@ -10,12 +11,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
 
     return MaterialApp(
-     // title: appTitle,
+      // title: appTitle,
       home: Scaffold(
-       appBar: AppBar(
+        appBar: AppBar(
           title: const Text('Infrsol co ., ltd'),
-         backgroundColor: Colors.green,
-       ),
+          backgroundColor: Colors.green,
+        ),
         body: const MyCustomForm(),
       ),
     );
