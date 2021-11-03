@@ -17,18 +17,24 @@ class _PaymentOfMonthState extends State<PaymentOfMonth> {
     Customer(id: 2, name: "ຮ້ານ ນາງພູວັນ",zone: 'Zone A'),
     Customer(id: 3, name: "ຮ້ານ ນາງສົມຈິດ",zone: 'Zone A'),
     Customer(id: 4, name: "ຮ້ານ ນາງແສງຈັນ",zone: 'Zone A'),
-    Customer(id: 1, name: "ຮ້ານ ນາງວຽງແກ້ວ",zone: 'Zone B'),
-    Customer(id: 2, name: "ຮ້ານ ນາງພູວັນ",zone: 'Zone B'),
-    Customer(id: 1, name: "ຮ້ານ ນາງວຽງແກ້ວ",zone: 'Zone B'),
-    Customer(id: 2, name: "ຮ້ານ ນາງພູວັນ",zone: 'Zone B'),
-    Customer(id: 3, name: "ຮ້ານ ນາງສົມຈິດ",zone: 'Zone C'),
-    Customer(id: 4, name: "ຮ້ານ ນາງແສງຈັນ",zone: 'Zone C'),
-    Customer(id: 2, name: "ຮ້ານ ນາງພູວັນ",zone: 'Zone D'),
-    Customer(id: 3, name: "ຮ້ານ ນາງສົມຈິດ",zone: 'Zone D'),
+    Customer(id: 5, name: "ຮ້ານ ນາງວຽງແກ້ວ",zone: 'Zone B'),
+    Customer(id: 6, name: "ຮ້ານ ນາງພູວັນ",zone: 'Zone B'),
+    Customer(id: 7, name: "ຮ້ານ ນາງວຽງແກ້ວ",zone: 'Zone B'),
+    Customer(id: 8, name: "ຮ້ານ ນາງພູວັນ",zone: 'Zone B'),
+    Customer(id: 9, name: "ຮ້ານ ນາງສົມຈິດ",zone: 'Zone C'),
+    Customer(id: 10, name: "ຮ້ານ ນາງແສງຈັນ",zone: 'Zone C'),
+    Customer(id: 11, name: "ຮ້ານ ນາງພູວັນ",zone: 'Zone D'),
+    Customer(id: 13, name: "ຮ້ານ ນາງສົມຈິດ",zone: 'Zone D'),
 
   ];
 
    List<Customer> filtercustS = [];
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+      filtercustS = custS.where((i) => i.zone == zone).toList();
+  }
   @override
   Widget build(BuildContext context) {
 
@@ -69,7 +75,7 @@ class _PaymentOfMonthState extends State<PaymentOfMonth> {
                         onPressed: (){},
                         icon: const Icon(
                           Icons.print,
-                          color: Colors.green,
+                          color: Colors.black,
                           size: 60,
                         )
                     ),
@@ -89,9 +95,9 @@ class _PaymentOfMonthState extends State<PaymentOfMonth> {
                     ],
                   ),
                   child: DropdownButtonHideUnderline(
+
                       child:DropdownButton<String>(
                         value: zone,
-
                         icon: const Icon(Icons.arrow_downward,color: Colors.green,),
                         iconSize: 24,
                         elevation: 16,
@@ -102,11 +108,9 @@ class _PaymentOfMonthState extends State<PaymentOfMonth> {
                         onChanged: (String? newZone) {
                           var rs = custS.where((i) => i.zone == newZone).toList();
                           setState(() {
-
                             zone = newZone!;
                             filtercustS = rs;
                           });
-
                         },
                         items: <String>['Zone A', 'Zone B', 'Zone C', 'Zone D']
                             .map<DropdownMenuItem<String>>((String value) {

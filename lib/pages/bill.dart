@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/material.dart';
 class Bill extends StatefulWidget {
   const Bill({Key? key}) : super(key: key);
@@ -19,49 +17,25 @@ class _BillState extends State<Bill> {
     Data(no: 3,lists: 'ຂີ້ເຫຍື້ອ',service: 30000),
     Data(no: 4,lists: 'ຂີ້ເຫຍື້ອ',service: 30000),
     Data(no: 5,lists: 'ຂີ້ເຫຍື້ອ',service: 30000),
-    Data(no: 1,lists: 'ຂີ້ເຫຍື້ອ',service: 30000),
-    Data(no: 2,lists: 'ຂີ້ເຫຍື້ອ',service: 30000),
-    Data(no: 3,lists: 'ຂີ້ເຫຍື້ອ',service: 30000),
+    Data(no: 6,lists: 'ຂີ້ເຫຍື້ອ',service: 30000),
+    Data(no: 7,lists: 'ຂີ້ເຫຍື້ອ',service: 30000),
+    Data(no: 8,lists: 'ຂີ້ເຫຍື້ອ',service: 30000),
+    Data(no: 9,lists: 'ຂີ້ເຫຍື້ອ',service: 30000),
+    Data(no: 10,lists: 'ຂີ້ເຫຍື້ອ',service: 30000),
     Data(no: 4,lists: 'ຂີ້ເຫຍື້ອ',service: 30000),
     Data(no: 5,lists: 'ຂີ້ເຫຍື້ອ',service: 30000),
-
-
-    Data(no: 1,lists: 'ຂີ້ເຫຍື້ອ',service: 30000),
-    Data(no: 2,lists: 'ຂີ້ເຫຍື້ອ',service: 30000),
-    Data(no: 3,lists: 'ຂີ້ເຫຍື້ອ',service: 30000),
+    Data(no: 6,lists: 'ຂີ້ເຫຍື້ອ',service: 30000),
+    Data(no: 7,lists: 'ຂີ້ເຫຍື້ອ',service: 30000),
+    Data(no: 8,lists: 'ຂີ້ເຫຍື້ອ',service: 30000),
+    Data(no: 9,lists: 'ຂີ້ເຫຍື້ອ',service: 30000),
+    Data(no: 10,lists: 'ຂີ້ເຫຍື້ອ',service: 30000),
     Data(no: 4,lists: 'ຂີ້ເຫຍື້ອ',service: 30000),
     Data(no: 5,lists: 'ຂີ້ເຫຍື້ອ',service: 30000),
-
-
-    Data(no: 1,lists: 'ຂີ້ເຫຍື້ອ',service: 30000),
-    Data(no: 2,lists: 'ຂີ້ເຫຍື້ອ',service: 30000),
-    Data(no: 3,lists: 'ຂີ້ເຫຍື້ອ',service: 30000),
-    Data(no: 4,lists: 'ຂີ້ເຫຍື້ອ',service: 30000),
-    Data(no: 5,lists: 'ຂີ້ເຫຍື້ອ',service: 30000),
-
-
-    Data(no: 1,lists: 'ຂີ້ເຫຍື້ອ',service: 30000),
-    Data(no: 2,lists: 'ຂີ້ເຫຍື້ອ',service: 30000),
-    Data(no: 3,lists: 'ຂີ້ເຫຍື້ອ',service: 30000),
-    Data(no: 4,lists: 'ຂີ້ເຫຍື້ອ',service: 30000),
-    Data(no: 5,lists: 'ຂີ້ເຫຍື້ອ',service: 30000),
-
-
-    Data(no: 1,lists: 'ຂີ້ເຫຍື້ອ',service: 30000),
-    Data(no: 2,lists: 'ຂີ້ເຫຍື້ອ',service: 30000),
-    Data(no: 3,lists: 'ຂີ້ເຫຍື້ອ',service: 30000),
-    Data(no: 4,lists: 'ຂີ້ເຫຍື້ອ',service: 30000),
-    Data(no: 5,lists: 'ຂີ້ເຫຍື້ອ',service: 30000),
-
-
-    Data(no: 1,lists: 'ຂີ້ເຫຍື້ອ',service: 30000),
-    Data(no: 2,lists: 'ຂີ້ເຫຍື້ອ',service: 30000),
-    Data(no: 3,lists: 'ຂີ້ເຫຍື້ອ',service: 30000),
-    Data(no: 4,lists: 'ຂີ້ເຫຍື້ອ',service: 30000),
-    Data(no: 5,lists: 'ຂີ້ເຫຍື້ອ',service: 30000),
-
-
-
+    Data(no: 6,lists: 'ຂີ້ເຫຍື້ອ',service: 30000),
+    Data(no: 7,lists: 'ຂີ້ເຫຍື້ອ',service: 30000),
+    Data(no: 8,lists: 'ຂີ້ເຫຍື້ອ',service: 30000),
+    Data(no: 9,lists: 'ຂີ້ເຫຍື້ອ',service: 30000),
+    Data(no: 10,lists: 'ຂີ້ເຫຍື້ອ',service: 30000),
 
   ];
   @override
@@ -69,49 +43,27 @@ class _BillState extends State<Bill> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('ໃບບິນ'),
-        centerTitle: true,
+        //centerTitle: true,
         backgroundColor: Colors.green,
+        actions: [
+          Padding(
+              padding: const EdgeInsets.only(right: 20.0),
+              child: GestureDetector(
+                onTap: () {               },
+                child: const Icon(
+                  Icons.print,
+                  color: Colors.black,
+                  size: 40,
+                ),
+              )
+          ),
+        ],
       ),
       body:SingleChildScrollView(
         child: Padding(
             padding: const EdgeInsets.all(10),
             child: Column(
               children: [
-                Container(
-                  padding: const EdgeInsets.only(bottom: 10),
-                  child: Row(
-                    children: [ Padding(
-                      padding: const EdgeInsets.only(left: 10.0),
-                      child: Container(
-                        width: 200,
-                        height: 50,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          color: Colors.white,
-                          boxShadow: const [
-                            BoxShadow(color: Colors.grey, spreadRadius: 3),
-                          ],
-                        ),
-                        child: const Center(
-                          child: Text('ເງິນລວມ : 350,000  ກີບ',style: TextStyle(fontSize: 17,fontWeight: FontWeight.bold)),
-                        ),
-                      ),
-                    ),
-                      Container(
-                        padding: const EdgeInsets.only(left: 30,bottom: 20),
-                        child: IconButton(
-                            onPressed: (){},
-                            icon: const Icon(
-                              Icons.print,
-                              color: Colors.green,
-                              size: 60,
-                            )
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-
                 Card(
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(15.0),
@@ -129,7 +81,7 @@ class _BillState extends State<Bill> {
 
                             ],
                           ),
-                          const Text('ໃບບິນຕະຫຼາດ',style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold),),
+                          const Text('ໃບບິນ',style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold),),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [

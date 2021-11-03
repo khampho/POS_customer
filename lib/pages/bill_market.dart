@@ -29,7 +29,7 @@ class _BillMarketState extends State<BillMarket> {
                 onTap: () {               },
                 child: const Icon(
                   Icons.print,
-                  color: Colors.white,
+                  color: Colors.black,
                   size: 40,
                 ),
               )
@@ -50,7 +50,7 @@ class _BillMarketState extends State<BillMarket> {
                   child: Column(
                     children: [
                       Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Image.asset('assets/images/logo.jpg',width: 90,),
                            const Text('ຕະຫຼາດ ໂພນຕ້ອງ'),
@@ -58,14 +58,14 @@ class _BillMarketState extends State<BillMarket> {
                       ),
                       const Text('ໃບເກັບເງິນ',style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold),),
                       Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: const [
                               Text('ຜູ້ຈ່າຍເງິນ : ນາງ ສົມສີ ',style: TextStyle(fontWeight: FontWeight.bold),),
                               Text('ເດືອນ : 04/2021'),
                         ],
                       ),
                       Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: const [
                           Text('ວັນທີ : 22/02/2022'),
                           Text('ເລກທີ່ : 203'),
@@ -117,7 +117,7 @@ class _BillMarketState extends State<BillMarket> {
                           height: 40,
 
                           child: const Center(
-                            child: Text('ເງິນລວມ : 350,000  ກີບ',style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold)),
+                            child: Text('ເງິນລວມ : 400,000  ກີບ',style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold)),
                           ),
                         ),
                       ),
