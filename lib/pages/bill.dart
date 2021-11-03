@@ -164,7 +164,7 @@ class _BillState extends State<Bill> {
                                   BoxShadow(color: Colors.grey, spreadRadius: 3),
                                 ],
                               ),
-                              height: 60,
+                              height: 40,
 
                               child: const Center(
                                 child: Text('ເງິນລວມ : 350,000  ກີບ',style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold)),

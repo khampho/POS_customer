@@ -40,12 +40,7 @@ class MyCustomFormState extends State<MyCustomForm> {
                 child: SingleChildScrollView(
                   child:Column(
                     children: [
-                      Container(
-                        child:Image.asset("assets/images/manBuying.jpg",
-                          width: 250,
-                          height: 200,
-                        ),
-                      ),
+                      const Icon(Icons.person,size: 150,color: Colors.green,),
                         Container(
                           width: 300,
                           padding: const EdgeInsets.only(top: 30),
